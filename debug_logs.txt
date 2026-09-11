@@ -4851,3 +4851,63 @@
 [2026-09-09T13:35:21.259Z] 📡 getCompanyById ID: 8 | company.name: Testing Plan Company | company.invoiceLabels: {"billTo":"Bill To:","shipTo":"Ship To:","subTotal":"Sub Total","tax":"Tax","total":"Total","number":"Number:","issue":"Issue:","dueDate":"Due Date:","showHeader":true,"showFooter":true,"showWarehouse":true,"showQty":true,"showUom":true,"showRate":true,"showTax":true,"showDiscount":true}
 [2026-09-11T06:05:53.683Z] 📡 getCompanyById ID: 3 | company.name: TAB ACCOUNTS | company.invoiceLabels: {"billTo":"Bill To:الي","shipTo":"Ship To:","subTotal":"Sub Total المجموع","tax":"Tax","total":"Total المجموع","number":"Number: الرقم","issue":"Issue:تاريخ الناشاء","dueDate":"Due Date:","showHeader":true,"showFooter":true,"showWarehouse":true,"showQty":true,"showUom":true,"showRate":true,"showTax":true,"showDiscount":true}
 [2026-09-11T06:05:54.621Z] 📡 getCompanyById ID: 3 | company.name: TAB ACCOUNTS | company.invoiceLabels: {"billTo":"Bill To:الي","shipTo":"Ship To:","subTotal":"Sub Total المجموع","tax":"Tax","total":"Total المجموع","number":"Number: الرقم","issue":"Issue:تاريخ الناشاء","dueDate":"Due Date:","showHeader":true,"showFooter":true,"showWarehouse":true,"showQty":true,"showUom":true,"showRate":true,"showTax":true,"showDiscount":true}
+[2026-09-11T10:21:13.012Z] 📡 getCompanyById ID: 3 | company.name: TAB ACCOUNTS | company.invoiceLabels: {"billTo":"Bill To:الي","shipTo":"Ship To:","subTotal":"Sub Total المجموع","tax":"Tax","total":"Total المجموع","number":"Number: الرقم","issue":"Issue:تاريخ الناشاء","dueDate":"Due Date:","showHeader":true,"showFooter":true,"showWarehouse":true,"showQty":true,"showUom":true,"showRate":true,"showTax":true,"showDiscount":true}
+[2026-09-11T10:22:13.482Z] 📡 getCompanyById ID: 3 | company.name: TAB ACCOUNTS | company.invoiceLabels: {"billTo":"Bill To:الي","shipTo":"Ship To:","subTotal":"Sub Total المجموع","tax":"Tax","total":"Total المجموع","number":"Number: الرقم","issue":"Issue:تاريخ الناشاء","dueDate":"Due Date:","showHeader":true,"showFooter":true,"showWarehouse":true,"showQty":true,"showUom":true,"showRate":true,"showTax":true,"showDiscount":true}
+[2026-09-11T11:02:04.881Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:08:23.201Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:08:23.207Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:08:25.878Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:08:25.891Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:08:28.897Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:08:28.902Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:08:30.190Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:08:30.196Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:08:31.328Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:08:31.331Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:08:31.970Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:08:31.979Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:08:37.698Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:08:37.706Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:10:01.168Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:10:01.183Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:10:02.369Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:10:02.371Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:10:05.024Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:10:05.029Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:10:06.317Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:10:06.320Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:10:07.736Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:10:07.738Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:10:08.440Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:10:08.445Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:10:58.208Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:10:58.212Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:11:43.428Z] 📥 Received company update request for ID: 3
+[2026-09-11T11:11:43.430Z] Request body fields: name, email, phone, website, address, city, state, zip, country, currency, bankName, accountHolder, accountNumber, ifsc, terms, termsInvoice, termsReceipt, termsPurchase, termsSalesOrder, termsQuotation, termsCreditNote, notes, invoiceTemplate, invoiceColor, showQrCode, inventoryConfig, invoiceTableHeaders, invoiceLabels, receiptTemplate, receiptColor, receiptTableHeaders, receiptLabels, paymentTemplate, paymentColor, paymentTableHeaders, paymentLabels, customFieldsConfig, documentTitles
+[2026-09-11T11:11:43.430Z] invoiceLabels raw value: {"billTo":"Bill To:","shipTo":"Ship To:","subTotal":"Sub Total","tax":"Tax","total":"Total","number":"Number:","issue":"Issue:","dueDate":"Due Date:","showHeader":true,"showFooter":true,"showWarehouse":true,"showQty":true,"showUom":true,"showRate":true,"showTax":true,"showDiscount":true}
+[2026-09-11T11:11:43.435Z] ❌ Update Company Error: Cannot read properties of null (reading 'inventoryConfig')
+[2026-09-11T11:14:39.158Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:14:39.161Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:14:42.392Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:14:42.397Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:14:44.325Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:14:44.331Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:14:45.488Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:14:45.493Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:14:46.906Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:14:46.912Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:14:47.907Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:14:47.913Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:14:53.251Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:14:53.255Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:14:55.162Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:14:55.166Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:14:56.300Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:14:56.305Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:14:57.806Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:14:57.814Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:15:01.069Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:15:01.071Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:15:07.503Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:15:07.507Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:24:45.342Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
