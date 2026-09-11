@@ -4911,3 +4911,12 @@
 [2026-09-11T11:15:07.503Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
 [2026-09-11T11:15:07.507Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
 [2026-09-11T11:24:45.342Z] 📡 getCompanyById ID: 3 | company.name: undefined | company.invoiceLabels: undefined
+[2026-09-11T11:39:10.471Z] 📡 getCompanyById ID: 2 | company.name: Tech Solutions Ltd. | company.invoiceLabels: null
+[2026-09-11T11:41:13.189Z] 📡 getCompanyById ID: 2 | company.name: Tech Solutions Ltd. | company.invoiceLabels: null
+[2026-09-11T12:34:12.768Z] 📡 getCompanyById ID: 2 | company.name: Tech Solutions Ltd. | company.invoiceLabels: null
+[2026-09-11T12:34:27.779Z] 📡 getCompanyById ID: 2 | company.name: Tech Solutions Ltd. | company.invoiceLabels: null
+[2026-09-11T12:34:27.784Z] 📡 getCompanyById ID: 2 | company.name: Tech Solutions Ltd. | company.invoiceLabels: null
+[2026-09-11T12:36:32.495Z] 📡 getCompanyById ID: 2 | company.name: Tech Solutions Ltd. | company.invoiceLabels: null
+[2026-09-11T12:36:32.500Z] 📡 getCompanyById ID: 2 | company.name: Tech Solutions Ltd. | company.invoiceLabels: null
+[2026-09-11T12:54:54.936Z] 📡 getCompanyById ID: 2 | company.name: Tech Solutions Ltd. | company.invoiceLabels: null
+[2026-09-11T12:57:28.268Z] 📡 getCompanyById ID: 2 | company.name: Tech Solutions Ltd. | company.invoiceLabels: null
