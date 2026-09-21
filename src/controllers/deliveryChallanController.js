@@ -44,15 +44,17 @@ const createChallan = async (req, res) => {
 
         const challanItems = items
             .map(item => ({
-                productId: parseInt(item.productId),
-                warehouseId: parseInt(item.warehouseId),
-                quantity: parseFloat(item.quantity),
+                productId: item.productId ? parseInt(item.productId) : null,
+                serviceId: item.serviceId ? parseInt(item.serviceId) : null,
+                warehouseId: item.warehouseId ? parseInt(item.warehouseId) : null,
+                uomId: item.uomId ? parseInt(item.uomId) : null,
+                quantity: parseFloat(item.quantity || item.delivered || 0),
                 description: item.description || ''
             }))
-            .filter(item => !isNaN(item.productId) && !isNaN(item.warehouseId) && item.quantity > 0);
+            .filter(item => (item.productId || item.serviceId || item.description) && item.quantity > 0);
 
         if (challanItems.length === 0) {
-            return res.status(400).json({ success: false, message: 'Valid items with product and warehouse are required' });
+            return res.status(400).json({ success: false, message: 'Valid items are required' });
         }
 
         const result = await prisma.$transaction(async (tx) => {
@@ -198,7 +200,14 @@ const getChallans = async (req, res) => {
                         shippingName: true, shippingPhone: true, shippingAddress: true, shippingCity: true, shippingState: true, shippingZipCode: true
                     }
                 },
-                deliverychallanitem: { include: { product: true, warehouse: true } },
+                deliverychallanitem: {
+                    include: {
+                        product: { include: { uom: true, salesUom: true } },
+                        service: { include: { uom: true } },
+                        warehouse: true,
+                        uom: true
+                    }
+                },
                 salesorder: {
                     include: { salesorderitem: true }
                 }
@@ -226,8 +235,10 @@ const getChallanById = async (req, res) => {
             include: {
                 deliverychallanitem: {
                     include: {
-                        product: true,
-                        warehouse: true
+                        product: { include: { uom: true, salesUom: true } },
+                        service: { include: { uom: true } },
+                        warehouse: true,
+                        uom: true
                     }
                 },
                 customer: true,
@@ -308,12 +319,14 @@ const updateChallan = async (req, res) => {
 
         const challanItems = items
             .map(item => ({
-                productId: parseInt(item.productId),
-                warehouseId: parseInt(item.warehouseId),
-                quantity: parseFloat(item.quantity),
+                productId: item.productId ? parseInt(item.productId) : null,
+                serviceId: item.serviceId ? parseInt(item.serviceId) : null,
+                warehouseId: item.warehouseId ? parseInt(item.warehouseId) : null,
+                uomId: item.uomId ? parseInt(item.uomId) : null,
+                quantity: parseFloat(item.quantity || item.delivered || 0),
                 description: item.description || ''
             }))
-            .filter(item => !isNaN(item.productId) && !isNaN(item.warehouseId) && item.quantity > 0);
+            .filter(item => (item.productId || item.serviceId || item.description) && item.quantity > 0);
 
         const result = await prisma.$transaction(async (tx) => {
             const company = await tx.company.findUnique({ where: { id: parseInt(companyId) } });
@@ -471,15 +484,19 @@ const updateChallan = async (req, res) => {
             if (salesOrder) {
                 // Map current delivery challan items to invoice items using rates and discounts from sales order items
                 const invoiceItems = result.deliverychallanitem.map(item => {
-                    const soItem = salesOrder.salesorderitem.find(si => si.productId === item.productId);
+                    const soItem = salesOrder.salesorderitem.find(si => 
+                        (item.productId && si.productId === item.productId) ||
+                        (item.serviceId && si.serviceId === item.serviceId)
+                    );
                     const rate = soItem ? soItem.rate : 0;
                     const discount = soItem ? soItem.discount : 0;
                     const taxRate = soItem ? soItem.taxRate : 0;
-                    const serviceId = soItem ? soItem.serviceId : null;
-                    const uomId = soItem ? soItem.uomId : null;
+                    const serviceId = item.serviceId || (soItem ? soItem.serviceId : null);
+                    const productId = item.productId || (soItem ? soItem.productId : null);
+                    const uomId = item.uomId || (soItem ? soItem.uomId : null);
 
                     return {
-                        productId: item.productId,
+                        productId,
                         serviceId,
                         uomId,
                         warehouseId: item.warehouseId,
@@ -490,6 +507,27 @@ const updateChallan = async (req, res) => {
                         taxRate
                     };
                 });
+
+                // Also append any items from sales order not in challan (e.g. services)
+                for (const soItem of (salesOrder.salesorderitem || [])) {
+                    const alreadyPresent = invoiceItems.some(inv => 
+                        (soItem.productId && inv.productId === soItem.productId) ||
+                        (soItem.serviceId && inv.serviceId === soItem.serviceId)
+                    );
+                    if (!alreadyPresent) {
+                        invoiceItems.push({
+                            productId: soItem.productId,
+                            serviceId: soItem.serviceId,
+                            uomId: soItem.uomId,
+                            warehouseId: soItem.warehouseId,
+                            description: soItem.description || '',
+                            quantity: soItem.quantity,
+                            rate: soItem.rate,
+                            discount: soItem.discount,
+                            taxRate: soItem.taxRate
+                        });
+                    }
+                }
 
                 // Invoke updateInvoice using mock req/res
                 const fakeReq = {
@@ -731,16 +769,20 @@ const convertToInvoice = async (req, res) => {
 
         // Map challan items to invoice items using rates and discounts from sales order items
         const invoiceItems = challan.deliverychallanitem.map(item => {
-            // Find corresponding item in sales order matching by productId
-            const soItem = salesOrder.salesorderitem.find(si => si.productId === item.productId);
+            // Find corresponding item in sales order matching by productId or serviceId
+            const soItem = salesOrder.salesorderitem.find(si => 
+                (item.productId && si.productId === item.productId) ||
+                (item.serviceId && si.serviceId === item.serviceId)
+            );
             const rate = soItem ? soItem.rate : 0;
             const discount = soItem ? soItem.discount : 0;
             const taxRate = soItem ? soItem.taxRate : 0;
-            const serviceId = soItem ? soItem.serviceId : null;
-            const uomId = soItem ? soItem.uomId : null;
+            const serviceId = item.serviceId || (soItem ? soItem.serviceId : null);
+            const productId = item.productId || (soItem ? soItem.productId : null);
+            const uomId = item.uomId || (soItem ? soItem.uomId : null);
 
             return {
-                productId: item.productId,
+                productId,
                 serviceId,
                 uomId,
                 warehouseId: item.warehouseId,
@@ -751,6 +793,27 @@ const convertToInvoice = async (req, res) => {
                 taxRate
             };
         });
+
+        // Also append any items from sales order that are not in challan (e.g. if old challan didn't have services)
+        for (const soItem of (salesOrder.salesorderitem || [])) {
+            const alreadyPresent = invoiceItems.some(inv => 
+                (soItem.productId && inv.productId === soItem.productId) ||
+                (soItem.serviceId && inv.serviceId === soItem.serviceId)
+            );
+            if (!alreadyPresent) {
+                invoiceItems.push({
+                    productId: soItem.productId,
+                    serviceId: soItem.serviceId,
+                    uomId: soItem.uomId,
+                    warehouseId: soItem.warehouseId,
+                    description: soItem.description || '',
+                    quantity: soItem.quantity,
+                    rate: soItem.rate,
+                    discount: soItem.discount,
+                    taxRate: soItem.taxRate
+                });
+            }
+        }
 
         // Set up the fake request body for createInvoice
         const fakeReq = {
@@ -898,28 +961,33 @@ const convertMultipleToInvoice = async (req, res) => {
                     let rate = 0;
                     let discount = 0;
                     let taxRate = 0;
-                    let serviceId = null;
-                    let uomId = null;
+                    let serviceId = item.serviceId || null;
+                    let productId = item.productId || null;
+                    let uomId = item.uomId || null;
                     let description = item.description || '';
 
                     if (salesOrder && salesOrder.salesorderitem) {
-                        const soItem = salesOrder.salesorderitem.find(si => si.productId === item.productId);
+                        const soItem = salesOrder.salesorderitem.find(si => 
+                            (item.productId && si.productId === item.productId) ||
+                            (item.serviceId && si.serviceId === item.serviceId)
+                        );
                         if (soItem) {
                             rate = soItem.rate;
                             discount = soItem.discount;
                             taxRate = soItem.taxRate;
-                            serviceId = soItem.serviceId;
-                            uomId = soItem.uomId;
+                            if (!serviceId) serviceId = soItem.serviceId;
+                            if (!productId) productId = soItem.productId;
+                            if (!uomId) uomId = soItem.uomId;
                             if (!description) description = soItem.description;
                         }
                     }
 
-                    const key = `${item.productId || 'none'}_${item.warehouseId || 'none'}`;
+                    const key = productId ? `p_${productId}_${item.warehouseId || 'none'}` : `s_${serviceId || 'custom'}_${item.warehouseId || 'none'}`;
                     if (consolidatedMap[key]) {
                         consolidatedMap[key].quantity += item.quantity;
                     } else {
                         consolidatedMap[key] = {
-                            productId: item.productId,
+                            productId,
                             serviceId,
                             uomId,
                             warehouseId: item.warehouseId,
@@ -929,6 +997,26 @@ const convertMultipleToInvoice = async (req, res) => {
                             discount,
                             taxRate
                         };
+                    }
+                }
+
+                // Also append any items from sales order that are not in challan
+                if (salesOrder && salesOrder.salesorderitem) {
+                    for (const soItem of salesOrder.salesorderitem) {
+                        const alreadyKey = soItem.productId ? `p_${soItem.productId}_${soItem.warehouseId || 'none'}` : `s_${soItem.serviceId || 'custom'}_${soItem.warehouseId || 'none'}`;
+                        if (!consolidatedMap[alreadyKey]) {
+                            consolidatedMap[alreadyKey] = {
+                                productId: soItem.productId,
+                                serviceId: soItem.serviceId,
+                                uomId: soItem.uomId,
+                                warehouseId: soItem.warehouseId,
+                                description: soItem.description || '',
+                                quantity: soItem.quantity,
+                                rate: soItem.rate,
+                                discount: soItem.discount,
+                                taxRate: soItem.taxRate
+                            };
+                        }
                     }
                 }
             }

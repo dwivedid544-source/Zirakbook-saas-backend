@@ -96,6 +96,7 @@ model company {
   name                  String
   email                 String                  @unique(map: "Company_email_key")
   logo                  String?                 @db.LongText
+  status                String                  @default("Active")
   startDate             DateTime?
   endDate               DateTime?
   invoiceTemplate       String                  @default("New York")
@@ -292,19 +293,25 @@ model deliverychallan {
 model deliverychallanitem {
   id              Int             @id @default(autoincrement())
   challanId       Int
-  productId       Int
-  warehouseId     Int
+  productId       Int?
+  serviceId       Int?
+  warehouseId     Int?
+  uomId           Int?
   quantity        Float
   createdAt       DateTime        @default(now())
   updatedAt       DateTime        @default(now()) @updatedAt
   description     String?         @db.Text
   deliverychallan deliverychallan @relation(fields: [challanId], references: [id], onDelete: Cascade, map: "DeliveryChallanItem_challanId_fkey")
-  product         product         @relation(fields: [productId], references: [id], onDelete: Cascade, map: "DeliveryChallanItem_productId_fkey")
-  warehouse       warehouse       @relation(fields: [warehouseId], references: [id], onDelete: Cascade, map: "DeliveryChallanItem_warehouseId_fkey")
+  product         product?        @relation(fields: [productId], references: [id], onDelete: Cascade, map: "DeliveryChallanItem_productId_fkey")
+  service         service?        @relation(fields: [serviceId], references: [id], onDelete: Cascade, map: "DeliveryChallanItem_serviceId_fkey")
+  warehouse       warehouse?      @relation(fields: [warehouseId], references: [id], onDelete: Cascade, map: "DeliveryChallanItem_warehouseId_fkey")
+  uom             uom?            @relation(fields: [uomId], references: [id], onDelete: Restrict, map: "DeliveryChallanItem_uomId_fkey")
 
   @@index([challanId], map: "DeliveryChallanItem_challanId_fkey")
   @@index([productId], map: "DeliveryChallanItem_productId_fkey")
+  @@index([serviceId], map: "DeliveryChallanItem_serviceId_fkey")
   @@index([warehouseId], map: "DeliveryChallanItem_warehouseId_fkey")
+  @@index([uomId], map: "DeliveryChallanItem_uomId_fkey")
 }
 
 model expenseentry {
@@ -1296,23 +1303,24 @@ model salesreturnitem {
 }
 
 model service {
-  id                 Int                  @id @default(autoincrement())
-  name               String
-  sku                String?
-  description        String?              @db.Text
-  uomId              Int
-  price              Float
-  taxRate            Float                @default(0)
-  allowInInvoices    Boolean              @default(true)
-  remarks            String?              @db.Text
-  companyId          Int
-  createdAt          DateTime             @default(now())
-  updatedAt          DateTime             @default(now()) @updatedAt
-  invoiceitem        invoiceitem[]
-  salesorderitem     salesorderitem[]
-  salesquotationitem salesquotationitem[]
-  company            company              @relation(fields: [companyId], references: [id], onDelete: Cascade, map: "Service_companyId_fkey")
-  uom                uom                  @relation(fields: [uomId], references: [id], map: "Service_uomId_fkey")
+  id                  Int                   @id @default(autoincrement())
+  name                String
+  sku                 String?
+  description         String?               @db.Text
+  uomId               Int
+  price               Float
+  taxRate             Float                 @default(0)
+  allowInInvoices     Boolean               @default(true)
+  remarks             String?               @db.Text
+  companyId           Int
+  createdAt           DateTime              @default(now())
+  updatedAt           DateTime              @default(now()) @updatedAt
+  invoiceitem         invoiceitem[]
+  salesorderitem      salesorderitem[]
+  salesquotationitem  salesquotationitem[]
+  deliverychallanitem deliverychallanitem[]
+  company             company               @relation(fields: [companyId], references: [id], onDelete: Cascade, map: "Service_companyId_fkey")
+  uom                 uom                   @relation(fields: [uomId], references: [id], map: "Service_uomId_fkey")
 
   @@unique([companyId, name], map: "Service_companyId_name_key")
   @@index([uomId], map: "Service_uomId_fkey")
@@ -1448,6 +1456,7 @@ model uom {
   salesquotationitem    salesquotationitem[]
   purchaseorderitem     purchaseorderitem[]
   purchasequotationitem purchasequotationitem[]
+  deliverychallanitem   deliverychallanitem[]
 
   @@unique([companyId, category, unitName], map: "UOM_companyId_category_unitName_key")
   @@index([baseUnitId], map: "UOM_baseUnitId_fkey")

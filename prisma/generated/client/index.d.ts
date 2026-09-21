@@ -8157,12 +8157,14 @@ export namespace Prisma {
     invoiceitem: number
     salesorderitem: number
     salesquotationitem: number
+    deliverychallanitem: number
   }
 
   export type ServiceCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     invoiceitem?: boolean | ServiceCountOutputTypeCountInvoiceitemArgs
     salesorderitem?: boolean | ServiceCountOutputTypeCountSalesorderitemArgs
     salesquotationitem?: boolean | ServiceCountOutputTypeCountSalesquotationitemArgs
+    deliverychallanitem?: boolean | ServiceCountOutputTypeCountDeliverychallanitemArgs
   }
 
   // Custom InputTypes
@@ -8195,6 +8197,13 @@ export namespace Prisma {
    */
   export type ServiceCountOutputTypeCountSalesquotationitemArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: salesquotationitemWhereInput
+  }
+
+  /**
+   * ServiceCountOutputType without action
+   */
+  export type ServiceCountOutputTypeCountDeliverychallanitemArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: deliverychallanitemWhereInput
   }
 
 
@@ -8246,6 +8255,7 @@ export namespace Prisma {
     salesquotationitem: number
     purchaseorderitem: number
     purchasequotationitem: number
+    deliverychallanitem: number
   }
 
   export type UomCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -8261,6 +8271,7 @@ export namespace Prisma {
     salesquotationitem?: boolean | UomCountOutputTypeCountSalesquotationitemArgs
     purchaseorderitem?: boolean | UomCountOutputTypeCountPurchaseorderitemArgs
     purchasequotationitem?: boolean | UomCountOutputTypeCountPurchasequotationitemArgs
+    deliverychallanitem?: boolean | UomCountOutputTypeCountDeliverychallanitemArgs
   }
 
   // Custom InputTypes
@@ -8356,6 +8367,13 @@ export namespace Prisma {
    */
   export type UomCountOutputTypeCountPurchasequotationitemArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: purchasequotationitemWhereInput
+  }
+
+  /**
+   * UomCountOutputType without action
+   */
+  export type UomCountOutputTypeCountDeliverychallanitemArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: deliverychallanitemWhereInput
   }
 
 
@@ -13712,6 +13730,7 @@ export namespace Prisma {
     name: string | null
     email: string | null
     logo: string | null
+    status: string | null
     startDate: Date | null
     endDate: Date | null
     invoiceTemplate: string | null
@@ -13764,6 +13783,7 @@ export namespace Prisma {
     name: string | null
     email: string | null
     logo: string | null
+    status: string | null
     startDate: Date | null
     endDate: Date | null
     invoiceTemplate: string | null
@@ -13816,6 +13836,7 @@ export namespace Prisma {
     name: number
     email: number
     logo: number
+    status: number
     startDate: number
     endDate: number
     invoiceTemplate: number
@@ -13880,6 +13901,7 @@ export namespace Prisma {
     name?: true
     email?: true
     logo?: true
+    status?: true
     startDate?: true
     endDate?: true
     invoiceTemplate?: true
@@ -13932,6 +13954,7 @@ export namespace Prisma {
     name?: true
     email?: true
     logo?: true
+    status?: true
     startDate?: true
     endDate?: true
     invoiceTemplate?: true
@@ -13984,6 +14007,7 @@ export namespace Prisma {
     name?: true
     email?: true
     logo?: true
+    status?: true
     startDate?: true
     endDate?: true
     invoiceTemplate?: true
@@ -14123,6 +14147,7 @@ export namespace Prisma {
     name: string
     email: string
     logo: string | null
+    status: string
     startDate: Date | null
     endDate: Date | null
     invoiceTemplate: string
@@ -14194,6 +14219,7 @@ export namespace Prisma {
     name?: boolean
     email?: boolean
     logo?: boolean
+    status?: boolean
     startDate?: boolean
     endDate?: boolean
     invoiceTemplate?: boolean
@@ -14290,6 +14316,7 @@ export namespace Prisma {
     name?: boolean
     email?: boolean
     logo?: boolean
+    status?: boolean
     startDate?: boolean
     endDate?: boolean
     invoiceTemplate?: boolean
@@ -14434,6 +14461,7 @@ export namespace Prisma {
       name: string
       email: string
       logo: string | null
+      status: string
       startDate: Date | null
       endDate: Date | null
       invoiceTemplate: string
@@ -14894,6 +14922,7 @@ export namespace Prisma {
     readonly name: FieldRef<"company", 'String'>
     readonly email: FieldRef<"company", 'String'>
     readonly logo: FieldRef<"company", 'String'>
+    readonly status: FieldRef<"company", 'String'>
     readonly startDate: FieldRef<"company", 'DateTime'>
     readonly endDate: FieldRef<"company", 'DateTime'>
     readonly invoiceTemplate: FieldRef<"company", 'String'>
@@ -19750,7 +19779,9 @@ export namespace Prisma {
     id: number | null
     challanId: number | null
     productId: number | null
+    serviceId: number | null
     warehouseId: number | null
+    uomId: number | null
     quantity: number | null
   }
 
@@ -19758,7 +19789,9 @@ export namespace Prisma {
     id: number | null
     challanId: number | null
     productId: number | null
+    serviceId: number | null
     warehouseId: number | null
+    uomId: number | null
     quantity: number | null
   }
 
@@ -19766,7 +19799,9 @@ export namespace Prisma {
     id: number | null
     challanId: number | null
     productId: number | null
+    serviceId: number | null
     warehouseId: number | null
+    uomId: number | null
     quantity: number | null
     createdAt: Date | null
     updatedAt: Date | null
@@ -19777,7 +19812,9 @@ export namespace Prisma {
     id: number | null
     challanId: number | null
     productId: number | null
+    serviceId: number | null
     warehouseId: number | null
+    uomId: number | null
     quantity: number | null
     createdAt: Date | null
     updatedAt: Date | null
@@ -19788,7 +19825,9 @@ export namespace Prisma {
     id: number
     challanId: number
     productId: number
+    serviceId: number
     warehouseId: number
+    uomId: number
     quantity: number
     createdAt: number
     updatedAt: number
@@ -19801,7 +19840,9 @@ export namespace Prisma {
     id?: true
     challanId?: true
     productId?: true
+    serviceId?: true
     warehouseId?: true
+    uomId?: true
     quantity?: true
   }
 
@@ -19809,7 +19850,9 @@ export namespace Prisma {
     id?: true
     challanId?: true
     productId?: true
+    serviceId?: true
     warehouseId?: true
+    uomId?: true
     quantity?: true
   }
 
@@ -19817,7 +19860,9 @@ export namespace Prisma {
     id?: true
     challanId?: true
     productId?: true
+    serviceId?: true
     warehouseId?: true
+    uomId?: true
     quantity?: true
     createdAt?: true
     updatedAt?: true
@@ -19828,7 +19873,9 @@ export namespace Prisma {
     id?: true
     challanId?: true
     productId?: true
+    serviceId?: true
     warehouseId?: true
+    uomId?: true
     quantity?: true
     createdAt?: true
     updatedAt?: true
@@ -19839,7 +19886,9 @@ export namespace Prisma {
     id?: true
     challanId?: true
     productId?: true
+    serviceId?: true
     warehouseId?: true
+    uomId?: true
     quantity?: true
     createdAt?: true
     updatedAt?: true
@@ -19936,8 +19985,10 @@ export namespace Prisma {
   export type DeliverychallanitemGroupByOutputType = {
     id: number
     challanId: number
-    productId: number
-    warehouseId: number
+    productId: number | null
+    serviceId: number | null
+    warehouseId: number | null
+    uomId: number | null
     quantity: number
     createdAt: Date
     updatedAt: Date
@@ -19967,14 +20018,18 @@ export namespace Prisma {
     id?: boolean
     challanId?: boolean
     productId?: boolean
+    serviceId?: boolean
     warehouseId?: boolean
+    uomId?: boolean
     quantity?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     description?: boolean
     deliverychallan?: boolean | deliverychallanDefaultArgs<ExtArgs>
-    product?: boolean | productDefaultArgs<ExtArgs>
-    warehouse?: boolean | warehouseDefaultArgs<ExtArgs>
+    product?: boolean | deliverychallanitem$productArgs<ExtArgs>
+    service?: boolean | deliverychallanitem$serviceArgs<ExtArgs>
+    warehouse?: boolean | deliverychallanitem$warehouseArgs<ExtArgs>
+    uom?: boolean | deliverychallanitem$uomArgs<ExtArgs>
   }, ExtArgs["result"]["deliverychallanitem"]>
 
 
@@ -19982,7 +20037,9 @@ export namespace Prisma {
     id?: boolean
     challanId?: boolean
     productId?: boolean
+    serviceId?: boolean
     warehouseId?: boolean
+    uomId?: boolean
     quantity?: boolean
     createdAt?: boolean
     updatedAt?: boolean
@@ -19991,22 +20048,28 @@ export namespace Prisma {
 
   export type deliverychallanitemInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     deliverychallan?: boolean | deliverychallanDefaultArgs<ExtArgs>
-    product?: boolean | productDefaultArgs<ExtArgs>
-    warehouse?: boolean | warehouseDefaultArgs<ExtArgs>
+    product?: boolean | deliverychallanitem$productArgs<ExtArgs>
+    service?: boolean | deliverychallanitem$serviceArgs<ExtArgs>
+    warehouse?: boolean | deliverychallanitem$warehouseArgs<ExtArgs>
+    uom?: boolean | deliverychallanitem$uomArgs<ExtArgs>
   }
 
   export type $deliverychallanitemPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "deliverychallanitem"
     objects: {
       deliverychallan: Prisma.$deliverychallanPayload<ExtArgs>
-      product: Prisma.$productPayload<ExtArgs>
-      warehouse: Prisma.$warehousePayload<ExtArgs>
+      product: Prisma.$productPayload<ExtArgs> | null
+      service: Prisma.$servicePayload<ExtArgs> | null
+      warehouse: Prisma.$warehousePayload<ExtArgs> | null
+      uom: Prisma.$uomPayload<ExtArgs> | null
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
       challanId: number
-      productId: number
-      warehouseId: number
+      productId: number | null
+      serviceId: number | null
+      warehouseId: number | null
+      uomId: number | null
       quantity: number
       createdAt: Date
       updatedAt: Date
@@ -20352,8 +20415,10 @@ export namespace Prisma {
   export interface Prisma__deliverychallanitemClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     deliverychallan<T extends deliverychallanDefaultArgs<ExtArgs> = {}>(args?: Subset<T, deliverychallanDefaultArgs<ExtArgs>>): Prisma__deliverychallanClient<$Result.GetResult<Prisma.$deliverychallanPayload<ExtArgs>, T, "findUniqueOrThrow"> | Null, Null, ExtArgs>
-    product<T extends productDefaultArgs<ExtArgs> = {}>(args?: Subset<T, productDefaultArgs<ExtArgs>>): Prisma__productClient<$Result.GetResult<Prisma.$productPayload<ExtArgs>, T, "findUniqueOrThrow"> | Null, Null, ExtArgs>
-    warehouse<T extends warehouseDefaultArgs<ExtArgs> = {}>(args?: Subset<T, warehouseDefaultArgs<ExtArgs>>): Prisma__warehouseClient<$Result.GetResult<Prisma.$warehousePayload<ExtArgs>, T, "findUniqueOrThrow"> | Null, Null, ExtArgs>
+    product<T extends deliverychallanitem$productArgs<ExtArgs> = {}>(args?: Subset<T, deliverychallanitem$productArgs<ExtArgs>>): Prisma__productClient<$Result.GetResult<Prisma.$productPayload<ExtArgs>, T, "findUniqueOrThrow"> | null, null, ExtArgs>
+    service<T extends deliverychallanitem$serviceArgs<ExtArgs> = {}>(args?: Subset<T, deliverychallanitem$serviceArgs<ExtArgs>>): Prisma__serviceClient<$Result.GetResult<Prisma.$servicePayload<ExtArgs>, T, "findUniqueOrThrow"> | null, null, ExtArgs>
+    warehouse<T extends deliverychallanitem$warehouseArgs<ExtArgs> = {}>(args?: Subset<T, deliverychallanitem$warehouseArgs<ExtArgs>>): Prisma__warehouseClient<$Result.GetResult<Prisma.$warehousePayload<ExtArgs>, T, "findUniqueOrThrow"> | null, null, ExtArgs>
+    uom<T extends deliverychallanitem$uomArgs<ExtArgs> = {}>(args?: Subset<T, deliverychallanitem$uomArgs<ExtArgs>>): Prisma__uomClient<$Result.GetResult<Prisma.$uomPayload<ExtArgs>, T, "findUniqueOrThrow"> | null, null, ExtArgs>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -20386,7 +20451,9 @@ export namespace Prisma {
     readonly id: FieldRef<"deliverychallanitem", 'Int'>
     readonly challanId: FieldRef<"deliverychallanitem", 'Int'>
     readonly productId: FieldRef<"deliverychallanitem", 'Int'>
+    readonly serviceId: FieldRef<"deliverychallanitem", 'Int'>
     readonly warehouseId: FieldRef<"deliverychallanitem", 'Int'>
+    readonly uomId: FieldRef<"deliverychallanitem", 'Int'>
     readonly quantity: FieldRef<"deliverychallanitem", 'Float'>
     readonly createdAt: FieldRef<"deliverychallanitem", 'DateTime'>
     readonly updatedAt: FieldRef<"deliverychallanitem", 'DateTime'>
@@ -20687,6 +20754,66 @@ export namespace Prisma {
      * Filter which deliverychallanitems to delete
      */
     where?: deliverychallanitemWhereInput
+  }
+
+  /**
+   * deliverychallanitem.product
+   */
+  export type deliverychallanitem$productArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the product
+     */
+    select?: productSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: productInclude<ExtArgs> | null
+    where?: productWhereInput
+  }
+
+  /**
+   * deliverychallanitem.service
+   */
+  export type deliverychallanitem$serviceArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the service
+     */
+    select?: serviceSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: serviceInclude<ExtArgs> | null
+    where?: serviceWhereInput
+  }
+
+  /**
+   * deliverychallanitem.warehouse
+   */
+  export type deliverychallanitem$warehouseArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the warehouse
+     */
+    select?: warehouseSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: warehouseInclude<ExtArgs> | null
+    where?: warehouseWhereInput
+  }
+
+  /**
+   * deliverychallanitem.uom
+   */
+  export type deliverychallanitem$uomArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the uom
+     */
+    select?: uomSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: uomInclude<ExtArgs> | null
+    where?: uomWhereInput
   }
 
   /**
@@ -60184,6 +60311,7 @@ export namespace Prisma {
     invoiceitem?: boolean | service$invoiceitemArgs<ExtArgs>
     salesorderitem?: boolean | service$salesorderitemArgs<ExtArgs>
     salesquotationitem?: boolean | service$salesquotationitemArgs<ExtArgs>
+    deliverychallanitem?: boolean | service$deliverychallanitemArgs<ExtArgs>
     company?: boolean | companyDefaultArgs<ExtArgs>
     uom?: boolean | uomDefaultArgs<ExtArgs>
     _count?: boolean | ServiceCountOutputTypeDefaultArgs<ExtArgs>
@@ -60209,6 +60337,7 @@ export namespace Prisma {
     invoiceitem?: boolean | service$invoiceitemArgs<ExtArgs>
     salesorderitem?: boolean | service$salesorderitemArgs<ExtArgs>
     salesquotationitem?: boolean | service$salesquotationitemArgs<ExtArgs>
+    deliverychallanitem?: boolean | service$deliverychallanitemArgs<ExtArgs>
     company?: boolean | companyDefaultArgs<ExtArgs>
     uom?: boolean | uomDefaultArgs<ExtArgs>
     _count?: boolean | ServiceCountOutputTypeDefaultArgs<ExtArgs>
@@ -60220,6 +60349,7 @@ export namespace Prisma {
       invoiceitem: Prisma.$invoiceitemPayload<ExtArgs>[]
       salesorderitem: Prisma.$salesorderitemPayload<ExtArgs>[]
       salesquotationitem: Prisma.$salesquotationitemPayload<ExtArgs>[]
+      deliverychallanitem: Prisma.$deliverychallanitemPayload<ExtArgs>[]
       company: Prisma.$companyPayload<ExtArgs>
       uom: Prisma.$uomPayload<ExtArgs>
     }
@@ -60579,6 +60709,7 @@ export namespace Prisma {
     invoiceitem<T extends service$invoiceitemArgs<ExtArgs> = {}>(args?: Subset<T, service$invoiceitemArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$invoiceitemPayload<ExtArgs>, T, "findMany"> | Null>
     salesorderitem<T extends service$salesorderitemArgs<ExtArgs> = {}>(args?: Subset<T, service$salesorderitemArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$salesorderitemPayload<ExtArgs>, T, "findMany"> | Null>
     salesquotationitem<T extends service$salesquotationitemArgs<ExtArgs> = {}>(args?: Subset<T, service$salesquotationitemArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$salesquotationitemPayload<ExtArgs>, T, "findMany"> | Null>
+    deliverychallanitem<T extends service$deliverychallanitemArgs<ExtArgs> = {}>(args?: Subset<T, service$deliverychallanitemArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$deliverychallanitemPayload<ExtArgs>, T, "findMany"> | Null>
     company<T extends companyDefaultArgs<ExtArgs> = {}>(args?: Subset<T, companyDefaultArgs<ExtArgs>>): Prisma__companyClient<$Result.GetResult<Prisma.$companyPayload<ExtArgs>, T, "findUniqueOrThrow"> | Null, Null, ExtArgs>
     uom<T extends uomDefaultArgs<ExtArgs> = {}>(args?: Subset<T, uomDefaultArgs<ExtArgs>>): Prisma__uomClient<$Result.GetResult<Prisma.$uomPayload<ExtArgs>, T, "findUniqueOrThrow"> | Null, Null, ExtArgs>
     /**
@@ -60978,6 +61109,26 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: SalesquotationitemScalarFieldEnum | SalesquotationitemScalarFieldEnum[]
+  }
+
+  /**
+   * service.deliverychallanitem
+   */
+  export type service$deliverychallanitemArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the deliverychallanitem
+     */
+    select?: deliverychallanitemSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: deliverychallanitemInclude<ExtArgs> | null
+    where?: deliverychallanitemWhereInput
+    orderBy?: deliverychallanitemOrderByWithRelationInput | deliverychallanitemOrderByWithRelationInput[]
+    cursor?: deliverychallanitemWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: DeliverychallanitemScalarFieldEnum | DeliverychallanitemScalarFieldEnum[]
   }
 
   /**
@@ -65502,6 +65653,7 @@ export namespace Prisma {
     salesquotationitem?: boolean | uom$salesquotationitemArgs<ExtArgs>
     purchaseorderitem?: boolean | uom$purchaseorderitemArgs<ExtArgs>
     purchasequotationitem?: boolean | uom$purchasequotationitemArgs<ExtArgs>
+    deliverychallanitem?: boolean | uom$deliverychallanitemArgs<ExtArgs>
     _count?: boolean | UomCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["uom"]>
 
@@ -65535,6 +65687,7 @@ export namespace Prisma {
     salesquotationitem?: boolean | uom$salesquotationitemArgs<ExtArgs>
     purchaseorderitem?: boolean | uom$purchaseorderitemArgs<ExtArgs>
     purchasequotationitem?: boolean | uom$purchasequotationitemArgs<ExtArgs>
+    deliverychallanitem?: boolean | uom$deliverychallanitemArgs<ExtArgs>
     _count?: boolean | UomCountOutputTypeDefaultArgs<ExtArgs>
   }
 
@@ -65555,6 +65708,7 @@ export namespace Prisma {
       salesquotationitem: Prisma.$salesquotationitemPayload<ExtArgs>[]
       purchaseorderitem: Prisma.$purchaseorderitemPayload<ExtArgs>[]
       purchasequotationitem: Prisma.$purchasequotationitemPayload<ExtArgs>[]
+      deliverychallanitem: Prisma.$deliverychallanitemPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -65922,6 +66076,7 @@ export namespace Prisma {
     salesquotationitem<T extends uom$salesquotationitemArgs<ExtArgs> = {}>(args?: Subset<T, uom$salesquotationitemArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$salesquotationitemPayload<ExtArgs>, T, "findMany"> | Null>
     purchaseorderitem<T extends uom$purchaseorderitemArgs<ExtArgs> = {}>(args?: Subset<T, uom$purchaseorderitemArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$purchaseorderitemPayload<ExtArgs>, T, "findMany"> | Null>
     purchasequotationitem<T extends uom$purchasequotationitemArgs<ExtArgs> = {}>(args?: Subset<T, uom$purchasequotationitemArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$purchasequotationitemPayload<ExtArgs>, T, "findMany"> | Null>
+    deliverychallanitem<T extends uom$deliverychallanitemArgs<ExtArgs> = {}>(args?: Subset<T, uom$deliverychallanitemArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$deliverychallanitemPayload<ExtArgs>, T, "findMany"> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -66513,6 +66668,26 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: PurchasequotationitemScalarFieldEnum | PurchasequotationitemScalarFieldEnum[]
+  }
+
+  /**
+   * uom.deliverychallanitem
+   */
+  export type uom$deliverychallanitemArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the deliverychallanitem
+     */
+    select?: deliverychallanitemSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: deliverychallanitemInclude<ExtArgs> | null
+    where?: deliverychallanitemWhereInput
+    orderBy?: deliverychallanitemOrderByWithRelationInput | deliverychallanitemOrderByWithRelationInput[]
+    cursor?: deliverychallanitemWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: DeliverychallanitemScalarFieldEnum | DeliverychallanitemScalarFieldEnum[]
   }
 
   /**
@@ -83808,6 +83983,7 @@ export namespace Prisma {
     name: 'name',
     email: 'email',
     logo: 'logo',
+    status: 'status',
     startDate: 'startDate',
     endDate: 'endDate',
     invoiceTemplate: 'invoiceTemplate',
@@ -83949,7 +84125,9 @@ export namespace Prisma {
     id: 'id',
     challanId: 'challanId',
     productId: 'productId',
+    serviceId: 'serviceId',
     warehouseId: 'warehouseId',
+    uomId: 'uomId',
     quantity: 'quantity',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt',
@@ -85728,6 +85906,7 @@ export namespace Prisma {
     name?: StringFilter<"company"> | string
     email?: StringFilter<"company"> | string
     logo?: StringNullableFilter<"company"> | string | null
+    status?: StringFilter<"company"> | string
     startDate?: DateTimeNullableFilter<"company"> | Date | string | null
     endDate?: DateTimeNullableFilter<"company"> | Date | string | null
     invoiceTemplate?: StringFilter<"company"> | string
@@ -85822,6 +86001,7 @@ export namespace Prisma {
     name?: SortOrder
     email?: SortOrder
     logo?: SortOrderInput | SortOrder
+    status?: SortOrder
     startDate?: SortOrderInput | SortOrder
     endDate?: SortOrderInput | SortOrder
     invoiceTemplate?: SortOrder
@@ -85919,6 +86099,7 @@ export namespace Prisma {
     NOT?: companyWhereInput | companyWhereInput[]
     name?: StringFilter<"company"> | string
     logo?: StringNullableFilter<"company"> | string | null
+    status?: StringFilter<"company"> | string
     startDate?: DateTimeNullableFilter<"company"> | Date | string | null
     endDate?: DateTimeNullableFilter<"company"> | Date | string | null
     invoiceTemplate?: StringFilter<"company"> | string
@@ -86013,6 +86194,7 @@ export namespace Prisma {
     name?: SortOrder
     email?: SortOrder
     logo?: SortOrderInput | SortOrder
+    status?: SortOrder
     startDate?: SortOrderInput | SortOrder
     endDate?: SortOrderInput | SortOrder
     invoiceTemplate?: SortOrder
@@ -86073,6 +86255,7 @@ export namespace Prisma {
     name?: StringWithAggregatesFilter<"company"> | string
     email?: StringWithAggregatesFilter<"company"> | string
     logo?: StringNullableWithAggregatesFilter<"company"> | string | null
+    status?: StringWithAggregatesFilter<"company"> | string
     startDate?: DateTimeNullableWithAggregatesFilter<"company"> | Date | string | null
     endDate?: DateTimeNullableWithAggregatesFilter<"company"> | Date | string | null
     invoiceTemplate?: StringWithAggregatesFilter<"company"> | string
@@ -86611,29 +86794,37 @@ export namespace Prisma {
     NOT?: deliverychallanitemWhereInput | deliverychallanitemWhereInput[]
     id?: IntFilter<"deliverychallanitem"> | number
     challanId?: IntFilter<"deliverychallanitem"> | number
-    productId?: IntFilter<"deliverychallanitem"> | number
-    warehouseId?: IntFilter<"deliverychallanitem"> | number
+    productId?: IntNullableFilter<"deliverychallanitem"> | number | null
+    serviceId?: IntNullableFilter<"deliverychallanitem"> | number | null
+    warehouseId?: IntNullableFilter<"deliverychallanitem"> | number | null
+    uomId?: IntNullableFilter<"deliverychallanitem"> | number | null
     quantity?: FloatFilter<"deliverychallanitem"> | number
     createdAt?: DateTimeFilter<"deliverychallanitem"> | Date | string
     updatedAt?: DateTimeFilter<"deliverychallanitem"> | Date | string
     description?: StringNullableFilter<"deliverychallanitem"> | string | null
     deliverychallan?: XOR<DeliverychallanRelationFilter, deliverychallanWhereInput>
-    product?: XOR<ProductRelationFilter, productWhereInput>
-    warehouse?: XOR<WarehouseRelationFilter, warehouseWhereInput>
+    product?: XOR<ProductNullableRelationFilter, productWhereInput> | null
+    service?: XOR<ServiceNullableRelationFilter, serviceWhereInput> | null
+    warehouse?: XOR<WarehouseNullableRelationFilter, warehouseWhereInput> | null
+    uom?: XOR<UomNullableRelationFilter, uomWhereInput> | null
   }
 
   export type deliverychallanitemOrderByWithRelationInput = {
     id?: SortOrder
     challanId?: SortOrder
-    productId?: SortOrder
-    warehouseId?: SortOrder
+    productId?: SortOrderInput | SortOrder
+    serviceId?: SortOrderInput | SortOrder
+    warehouseId?: SortOrderInput | SortOrder
+    uomId?: SortOrderInput | SortOrder
     quantity?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     description?: SortOrderInput | SortOrder
     deliverychallan?: deliverychallanOrderByWithRelationInput
     product?: productOrderByWithRelationInput
+    service?: serviceOrderByWithRelationInput
     warehouse?: warehouseOrderByWithRelationInput
+    uom?: uomOrderByWithRelationInput
   }
 
   export type deliverychallanitemWhereUniqueInput = Prisma.AtLeast<{
@@ -86642,22 +86833,28 @@ export namespace Prisma {
     OR?: deliverychallanitemWhereInput[]
     NOT?: deliverychallanitemWhereInput | deliverychallanitemWhereInput[]
     challanId?: IntFilter<"deliverychallanitem"> | number
-    productId?: IntFilter<"deliverychallanitem"> | number
-    warehouseId?: IntFilter<"deliverychallanitem"> | number
+    productId?: IntNullableFilter<"deliverychallanitem"> | number | null
+    serviceId?: IntNullableFilter<"deliverychallanitem"> | number | null
+    warehouseId?: IntNullableFilter<"deliverychallanitem"> | number | null
+    uomId?: IntNullableFilter<"deliverychallanitem"> | number | null
     quantity?: FloatFilter<"deliverychallanitem"> | number
     createdAt?: DateTimeFilter<"deliverychallanitem"> | Date | string
     updatedAt?: DateTimeFilter<"deliverychallanitem"> | Date | string
     description?: StringNullableFilter<"deliverychallanitem"> | string | null
     deliverychallan?: XOR<DeliverychallanRelationFilter, deliverychallanWhereInput>
-    product?: XOR<ProductRelationFilter, productWhereInput>
-    warehouse?: XOR<WarehouseRelationFilter, warehouseWhereInput>
+    product?: XOR<ProductNullableRelationFilter, productWhereInput> | null
+    service?: XOR<ServiceNullableRelationFilter, serviceWhereInput> | null
+    warehouse?: XOR<WarehouseNullableRelationFilter, warehouseWhereInput> | null
+    uom?: XOR<UomNullableRelationFilter, uomWhereInput> | null
   }, "id">
 
   export type deliverychallanitemOrderByWithAggregationInput = {
     id?: SortOrder
     challanId?: SortOrder
-    productId?: SortOrder
-    warehouseId?: SortOrder
+    productId?: SortOrderInput | SortOrder
+    serviceId?: SortOrderInput | SortOrder
+    warehouseId?: SortOrderInput | SortOrder
+    uomId?: SortOrderInput | SortOrder
     quantity?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -86675,8 +86872,10 @@ export namespace Prisma {
     NOT?: deliverychallanitemScalarWhereWithAggregatesInput | deliverychallanitemScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"deliverychallanitem"> | number
     challanId?: IntWithAggregatesFilter<"deliverychallanitem"> | number
-    productId?: IntWithAggregatesFilter<"deliverychallanitem"> | number
-    warehouseId?: IntWithAggregatesFilter<"deliverychallanitem"> | number
+    productId?: IntNullableWithAggregatesFilter<"deliverychallanitem"> | number | null
+    serviceId?: IntNullableWithAggregatesFilter<"deliverychallanitem"> | number | null
+    warehouseId?: IntNullableWithAggregatesFilter<"deliverychallanitem"> | number | null
+    uomId?: IntNullableWithAggregatesFilter<"deliverychallanitem"> | number | null
     quantity?: FloatWithAggregatesFilter<"deliverychallanitem"> | number
     createdAt?: DateTimeWithAggregatesFilter<"deliverychallanitem"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"deliverychallanitem"> | Date | string
@@ -91113,6 +91312,7 @@ export namespace Prisma {
     invoiceitem?: InvoiceitemListRelationFilter
     salesorderitem?: SalesorderitemListRelationFilter
     salesquotationitem?: SalesquotationitemListRelationFilter
+    deliverychallanitem?: DeliverychallanitemListRelationFilter
     company?: XOR<CompanyRelationFilter, companyWhereInput>
     uom?: XOR<UomRelationFilter, uomWhereInput>
   }
@@ -91133,6 +91333,7 @@ export namespace Prisma {
     invoiceitem?: invoiceitemOrderByRelationAggregateInput
     salesorderitem?: salesorderitemOrderByRelationAggregateInput
     salesquotationitem?: salesquotationitemOrderByRelationAggregateInput
+    deliverychallanitem?: deliverychallanitemOrderByRelationAggregateInput
     company?: companyOrderByWithRelationInput
     uom?: uomOrderByWithRelationInput
   }
@@ -91157,6 +91358,7 @@ export namespace Prisma {
     invoiceitem?: InvoiceitemListRelationFilter
     salesorderitem?: SalesorderitemListRelationFilter
     salesquotationitem?: SalesquotationitemListRelationFilter
+    deliverychallanitem?: DeliverychallanitemListRelationFilter
     company?: XOR<CompanyRelationFilter, companyWhereInput>
     uom?: XOR<UomRelationFilter, uomWhereInput>
   }, "id" | "companyId_name">
@@ -91642,6 +91844,7 @@ export namespace Prisma {
     salesquotationitem?: SalesquotationitemListRelationFilter
     purchaseorderitem?: PurchaseorderitemListRelationFilter
     purchasequotationitem?: PurchasequotationitemListRelationFilter
+    deliverychallanitem?: DeliverychallanitemListRelationFilter
   }
 
   export type uomOrderByWithRelationInput = {
@@ -91670,6 +91873,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemOrderByRelationAggregateInput
     purchaseorderitem?: purchaseorderitemOrderByRelationAggregateInput
     purchasequotationitem?: purchasequotationitemOrderByRelationAggregateInput
+    deliverychallanitem?: deliverychallanitemOrderByRelationAggregateInput
   }
 
   export type uomWhereUniqueInput = Prisma.AtLeast<{
@@ -91702,6 +91906,7 @@ export namespace Prisma {
     salesquotationitem?: SalesquotationitemListRelationFilter
     purchaseorderitem?: PurchaseorderitemListRelationFilter
     purchasequotationitem?: PurchasequotationitemListRelationFilter
+    deliverychallanitem?: DeliverychallanitemListRelationFilter
   }, "id" | "companyId_category_unitName">
 
   export type uomOrderByWithAggregationInput = {
@@ -93734,6 +93939,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -93827,6 +94033,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -93919,6 +94126,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -94012,6 +94220,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -94105,6 +94314,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -94156,6 +94366,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -94207,6 +94418,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -94840,15 +95052,19 @@ export namespace Prisma {
     updatedAt?: Date | string
     description?: string | null
     deliverychallan: deliverychallanCreateNestedOneWithoutDeliverychallanitemInput
-    product: productCreateNestedOneWithoutDeliverychallanitemInput
-    warehouse: warehouseCreateNestedOneWithoutDeliverychallanitemInput
+    product?: productCreateNestedOneWithoutDeliverychallanitemInput
+    service?: serviceCreateNestedOneWithoutDeliverychallanitemInput
+    warehouse?: warehouseCreateNestedOneWithoutDeliverychallanitemInput
+    uom?: uomCreateNestedOneWithoutDeliverychallanitemInput
   }
 
   export type deliverychallanitemUncheckedCreateInput = {
     id?: number
     challanId: number
-    productId: number
-    warehouseId: number
+    productId?: number | null
+    serviceId?: number | null
+    warehouseId?: number | null
+    uomId?: number | null
     quantity: number
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -94861,15 +95077,19 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     deliverychallan?: deliverychallanUpdateOneRequiredWithoutDeliverychallanitemNestedInput
-    product?: productUpdateOneRequiredWithoutDeliverychallanitemNestedInput
-    warehouse?: warehouseUpdateOneRequiredWithoutDeliverychallanitemNestedInput
+    product?: productUpdateOneWithoutDeliverychallanitemNestedInput
+    service?: serviceUpdateOneWithoutDeliverychallanitemNestedInput
+    warehouse?: warehouseUpdateOneWithoutDeliverychallanitemNestedInput
+    uom?: uomUpdateOneWithoutDeliverychallanitemNestedInput
   }
 
   export type deliverychallanitemUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     challanId?: IntFieldUpdateOperationsInput | number
-    productId?: IntFieldUpdateOperationsInput | number
-    warehouseId?: IntFieldUpdateOperationsInput | number
+    productId?: NullableIntFieldUpdateOperationsInput | number | null
+    serviceId?: NullableIntFieldUpdateOperationsInput | number | null
+    warehouseId?: NullableIntFieldUpdateOperationsInput | number | null
+    uomId?: NullableIntFieldUpdateOperationsInput | number | null
     quantity?: FloatFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -94879,8 +95099,10 @@ export namespace Prisma {
   export type deliverychallanitemCreateManyInput = {
     id?: number
     challanId: number
-    productId: number
-    warehouseId: number
+    productId?: number | null
+    serviceId?: number | null
+    warehouseId?: number | null
+    uomId?: number | null
     quantity: number
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -94897,8 +95119,10 @@ export namespace Prisma {
   export type deliverychallanitemUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     challanId?: IntFieldUpdateOperationsInput | number
-    productId?: IntFieldUpdateOperationsInput | number
-    warehouseId?: IntFieldUpdateOperationsInput | number
+    productId?: NullableIntFieldUpdateOperationsInput | number | null
+    serviceId?: NullableIntFieldUpdateOperationsInput | number | null
+    warehouseId?: NullableIntFieldUpdateOperationsInput | number | null
+    uomId?: NullableIntFieldUpdateOperationsInput | number | null
     quantity?: FloatFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -99730,6 +99954,7 @@ export namespace Prisma {
     invoiceitem?: invoiceitemCreateNestedManyWithoutServiceInput
     salesorderitem?: salesorderitemCreateNestedManyWithoutServiceInput
     salesquotationitem?: salesquotationitemCreateNestedManyWithoutServiceInput
+    deliverychallanitem?: deliverychallanitemCreateNestedManyWithoutServiceInput
     company: companyCreateNestedOneWithoutServiceInput
     uom: uomCreateNestedOneWithoutServiceInput
   }
@@ -99750,6 +99975,7 @@ export namespace Prisma {
     invoiceitem?: invoiceitemUncheckedCreateNestedManyWithoutServiceInput
     salesorderitem?: salesorderitemUncheckedCreateNestedManyWithoutServiceInput
     salesquotationitem?: salesquotationitemUncheckedCreateNestedManyWithoutServiceInput
+    deliverychallanitem?: deliverychallanitemUncheckedCreateNestedManyWithoutServiceInput
   }
 
   export type serviceUpdateInput = {
@@ -99765,6 +99991,7 @@ export namespace Prisma {
     invoiceitem?: invoiceitemUpdateManyWithoutServiceNestedInput
     salesorderitem?: salesorderitemUpdateManyWithoutServiceNestedInput
     salesquotationitem?: salesquotationitemUpdateManyWithoutServiceNestedInput
+    deliverychallanitem?: deliverychallanitemUpdateManyWithoutServiceNestedInput
     company?: companyUpdateOneRequiredWithoutServiceNestedInput
     uom?: uomUpdateOneRequiredWithoutServiceNestedInput
   }
@@ -99785,6 +100012,7 @@ export namespace Prisma {
     invoiceitem?: invoiceitemUncheckedUpdateManyWithoutServiceNestedInput
     salesorderitem?: salesorderitemUncheckedUpdateManyWithoutServiceNestedInput
     salesquotationitem?: salesquotationitemUncheckedUpdateManyWithoutServiceNestedInput
+    deliverychallanitem?: deliverychallanitemUncheckedUpdateManyWithoutServiceNestedInput
   }
 
   export type serviceCreateManyInput = {
@@ -100255,6 +100483,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemCreateNestedManyWithoutUomInput
     purchaseorderitem?: purchaseorderitemCreateNestedManyWithoutUomInput
     purchasequotationitem?: purchasequotationitemCreateNestedManyWithoutUomInput
+    deliverychallanitem?: deliverychallanitemCreateNestedManyWithoutUomInput
   }
 
   export type uomUncheckedCreateInput = {
@@ -100281,6 +100510,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUncheckedCreateNestedManyWithoutUomInput
     purchaseorderitem?: purchaseorderitemUncheckedCreateNestedManyWithoutUomInput
     purchasequotationitem?: purchasequotationitemUncheckedCreateNestedManyWithoutUomInput
+    deliverychallanitem?: deliverychallanitemUncheckedCreateNestedManyWithoutUomInput
   }
 
   export type uomUpdateInput = {
@@ -100306,6 +100536,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUpdateManyWithoutUomNestedInput
     purchaseorderitem?: purchaseorderitemUpdateManyWithoutUomNestedInput
     purchasequotationitem?: purchasequotationitemUpdateManyWithoutUomNestedInput
+    deliverychallanitem?: deliverychallanitemUpdateManyWithoutUomNestedInput
   }
 
   export type uomUncheckedUpdateInput = {
@@ -100332,6 +100563,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUncheckedUpdateManyWithoutUomNestedInput
     purchaseorderitem?: purchaseorderitemUncheckedUpdateManyWithoutUomNestedInput
     purchasequotationitem?: purchasequotationitemUncheckedUpdateManyWithoutUomNestedInput
+    deliverychallanitem?: deliverychallanitemUncheckedUpdateManyWithoutUomNestedInput
   }
 
   export type uomCreateManyInput = {
@@ -102972,6 +103204,7 @@ export namespace Prisma {
     name?: SortOrder
     email?: SortOrder
     logo?: SortOrder
+    status?: SortOrder
     startDate?: SortOrder
     endDate?: SortOrder
     invoiceTemplate?: SortOrder
@@ -103029,6 +103262,7 @@ export namespace Prisma {
     name?: SortOrder
     email?: SortOrder
     logo?: SortOrder
+    status?: SortOrder
     startDate?: SortOrder
     endDate?: SortOrder
     invoiceTemplate?: SortOrder
@@ -103081,6 +103315,7 @@ export namespace Prisma {
     name?: SortOrder
     email?: SortOrder
     logo?: SortOrder
+    status?: SortOrder
     startDate?: SortOrder
     endDate?: SortOrder
     invoiceTemplate?: SortOrder
@@ -103517,21 +103752,33 @@ export namespace Prisma {
     isNot?: deliverychallanWhereInput
   }
 
-  export type ProductRelationFilter = {
-    is?: productWhereInput
-    isNot?: productWhereInput
+  export type ProductNullableRelationFilter = {
+    is?: productWhereInput | null
+    isNot?: productWhereInput | null
   }
 
-  export type WarehouseRelationFilter = {
-    is?: warehouseWhereInput
-    isNot?: warehouseWhereInput
+  export type ServiceNullableRelationFilter = {
+    is?: serviceWhereInput | null
+    isNot?: serviceWhereInput | null
+  }
+
+  export type WarehouseNullableRelationFilter = {
+    is?: warehouseWhereInput | null
+    isNot?: warehouseWhereInput | null
+  }
+
+  export type UomNullableRelationFilter = {
+    is?: uomWhereInput | null
+    isNot?: uomWhereInput | null
   }
 
   export type deliverychallanitemCountOrderByAggregateInput = {
     id?: SortOrder
     challanId?: SortOrder
     productId?: SortOrder
+    serviceId?: SortOrder
     warehouseId?: SortOrder
+    uomId?: SortOrder
     quantity?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -103542,7 +103789,9 @@ export namespace Prisma {
     id?: SortOrder
     challanId?: SortOrder
     productId?: SortOrder
+    serviceId?: SortOrder
     warehouseId?: SortOrder
+    uomId?: SortOrder
     quantity?: SortOrder
   }
 
@@ -103550,7 +103799,9 @@ export namespace Prisma {
     id?: SortOrder
     challanId?: SortOrder
     productId?: SortOrder
+    serviceId?: SortOrder
     warehouseId?: SortOrder
+    uomId?: SortOrder
     quantity?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -103561,7 +103812,9 @@ export namespace Prisma {
     id?: SortOrder
     challanId?: SortOrder
     productId?: SortOrder
+    serviceId?: SortOrder
     warehouseId?: SortOrder
+    uomId?: SortOrder
     quantity?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -103572,7 +103825,9 @@ export namespace Prisma {
     id?: SortOrder
     challanId?: SortOrder
     productId?: SortOrder
+    serviceId?: SortOrder
     warehouseId?: SortOrder
+    uomId?: SortOrder
     quantity?: SortOrder
   }
 
@@ -103748,6 +104003,16 @@ export namespace Prisma {
   export type GoodsreceiptnoteRelationFilter = {
     is?: goodsreceiptnoteWhereInput
     isNot?: goodsreceiptnoteWhereInput
+  }
+
+  export type ProductRelationFilter = {
+    is?: productWhereInput
+    isNot?: productWhereInput
+  }
+
+  export type WarehouseRelationFilter = {
+    is?: warehouseWhereInput
+    isNot?: warehouseWhereInput
   }
 
   export type goodsreceiptnoteitemCountOrderByAggregateInput = {
@@ -104041,11 +104306,6 @@ export namespace Prisma {
     in?: $Enums.inventorytransaction_type[]
     notIn?: $Enums.inventorytransaction_type[]
     not?: NestedEnuminventorytransaction_typeFilter<$PrismaModel> | $Enums.inventorytransaction_type
-  }
-
-  export type WarehouseNullableRelationFilter = {
-    is?: warehouseWhereInput | null
-    isNot?: warehouseWhereInput | null
   }
 
   export type UserNullableRelationFilter = {
@@ -104385,21 +104645,6 @@ export namespace Prisma {
   export type InvoiceRelationFilter = {
     is?: invoiceWhereInput
     isNot?: invoiceWhereInput
-  }
-
-  export type ProductNullableRelationFilter = {
-    is?: productWhereInput | null
-    isNot?: productWhereInput | null
-  }
-
-  export type ServiceNullableRelationFilter = {
-    is?: serviceWhereInput | null
-    isNot?: serviceWhereInput | null
-  }
-
-  export type UomNullableRelationFilter = {
-    is?: uomWhereInput | null
-    isNot?: uomWhereInput | null
   }
 
   export type invoiceitemCountOrderByAggregateInput = {
@@ -111254,10 +111499,22 @@ export namespace Prisma {
     connect?: productWhereUniqueInput
   }
 
+  export type serviceCreateNestedOneWithoutDeliverychallanitemInput = {
+    create?: XOR<serviceCreateWithoutDeliverychallanitemInput, serviceUncheckedCreateWithoutDeliverychallanitemInput>
+    connectOrCreate?: serviceCreateOrConnectWithoutDeliverychallanitemInput
+    connect?: serviceWhereUniqueInput
+  }
+
   export type warehouseCreateNestedOneWithoutDeliverychallanitemInput = {
     create?: XOR<warehouseCreateWithoutDeliverychallanitemInput, warehouseUncheckedCreateWithoutDeliverychallanitemInput>
     connectOrCreate?: warehouseCreateOrConnectWithoutDeliverychallanitemInput
     connect?: warehouseWhereUniqueInput
+  }
+
+  export type uomCreateNestedOneWithoutDeliverychallanitemInput = {
+    create?: XOR<uomCreateWithoutDeliverychallanitemInput, uomUncheckedCreateWithoutDeliverychallanitemInput>
+    connectOrCreate?: uomCreateOrConnectWithoutDeliverychallanitemInput
+    connect?: uomWhereUniqueInput
   }
 
   export type deliverychallanUpdateOneRequiredWithoutDeliverychallanitemNestedInput = {
@@ -111268,20 +111525,44 @@ export namespace Prisma {
     update?: XOR<XOR<deliverychallanUpdateToOneWithWhereWithoutDeliverychallanitemInput, deliverychallanUpdateWithoutDeliverychallanitemInput>, deliverychallanUncheckedUpdateWithoutDeliverychallanitemInput>
   }
 
-  export type productUpdateOneRequiredWithoutDeliverychallanitemNestedInput = {
+  export type productUpdateOneWithoutDeliverychallanitemNestedInput = {
     create?: XOR<productCreateWithoutDeliverychallanitemInput, productUncheckedCreateWithoutDeliverychallanitemInput>
     connectOrCreate?: productCreateOrConnectWithoutDeliverychallanitemInput
     upsert?: productUpsertWithoutDeliverychallanitemInput
+    disconnect?: productWhereInput | boolean
+    delete?: productWhereInput | boolean
     connect?: productWhereUniqueInput
     update?: XOR<XOR<productUpdateToOneWithWhereWithoutDeliverychallanitemInput, productUpdateWithoutDeliverychallanitemInput>, productUncheckedUpdateWithoutDeliverychallanitemInput>
   }
 
-  export type warehouseUpdateOneRequiredWithoutDeliverychallanitemNestedInput = {
+  export type serviceUpdateOneWithoutDeliverychallanitemNestedInput = {
+    create?: XOR<serviceCreateWithoutDeliverychallanitemInput, serviceUncheckedCreateWithoutDeliverychallanitemInput>
+    connectOrCreate?: serviceCreateOrConnectWithoutDeliverychallanitemInput
+    upsert?: serviceUpsertWithoutDeliverychallanitemInput
+    disconnect?: serviceWhereInput | boolean
+    delete?: serviceWhereInput | boolean
+    connect?: serviceWhereUniqueInput
+    update?: XOR<XOR<serviceUpdateToOneWithWhereWithoutDeliverychallanitemInput, serviceUpdateWithoutDeliverychallanitemInput>, serviceUncheckedUpdateWithoutDeliverychallanitemInput>
+  }
+
+  export type warehouseUpdateOneWithoutDeliverychallanitemNestedInput = {
     create?: XOR<warehouseCreateWithoutDeliverychallanitemInput, warehouseUncheckedCreateWithoutDeliverychallanitemInput>
     connectOrCreate?: warehouseCreateOrConnectWithoutDeliverychallanitemInput
     upsert?: warehouseUpsertWithoutDeliverychallanitemInput
+    disconnect?: warehouseWhereInput | boolean
+    delete?: warehouseWhereInput | boolean
     connect?: warehouseWhereUniqueInput
     update?: XOR<XOR<warehouseUpdateToOneWithWhereWithoutDeliverychallanitemInput, warehouseUpdateWithoutDeliverychallanitemInput>, warehouseUncheckedUpdateWithoutDeliverychallanitemInput>
+  }
+
+  export type uomUpdateOneWithoutDeliverychallanitemNestedInput = {
+    create?: XOR<uomCreateWithoutDeliverychallanitemInput, uomUncheckedCreateWithoutDeliverychallanitemInput>
+    connectOrCreate?: uomCreateOrConnectWithoutDeliverychallanitemInput
+    upsert?: uomUpsertWithoutDeliverychallanitemInput
+    disconnect?: uomWhereInput | boolean
+    delete?: uomWhereInput | boolean
+    connect?: uomWhereUniqueInput
+    update?: XOR<XOR<uomUpdateToOneWithWhereWithoutDeliverychallanitemInput, uomUpdateWithoutDeliverychallanitemInput>, uomUncheckedUpdateWithoutDeliverychallanitemInput>
   }
 
   export type companyCreateNestedOneWithoutExpenseentryInput = {
@@ -115875,6 +116156,13 @@ export namespace Prisma {
     connect?: salesquotationitemWhereUniqueInput | salesquotationitemWhereUniqueInput[]
   }
 
+  export type deliverychallanitemCreateNestedManyWithoutServiceInput = {
+    create?: XOR<deliverychallanitemCreateWithoutServiceInput, deliverychallanitemUncheckedCreateWithoutServiceInput> | deliverychallanitemCreateWithoutServiceInput[] | deliverychallanitemUncheckedCreateWithoutServiceInput[]
+    connectOrCreate?: deliverychallanitemCreateOrConnectWithoutServiceInput | deliverychallanitemCreateOrConnectWithoutServiceInput[]
+    createMany?: deliverychallanitemCreateManyServiceInputEnvelope
+    connect?: deliverychallanitemWhereUniqueInput | deliverychallanitemWhereUniqueInput[]
+  }
+
   export type companyCreateNestedOneWithoutServiceInput = {
     create?: XOR<companyCreateWithoutServiceInput, companyUncheckedCreateWithoutServiceInput>
     connectOrCreate?: companyCreateOrConnectWithoutServiceInput
@@ -115906,6 +116194,13 @@ export namespace Prisma {
     connectOrCreate?: salesquotationitemCreateOrConnectWithoutServiceInput | salesquotationitemCreateOrConnectWithoutServiceInput[]
     createMany?: salesquotationitemCreateManyServiceInputEnvelope
     connect?: salesquotationitemWhereUniqueInput | salesquotationitemWhereUniqueInput[]
+  }
+
+  export type deliverychallanitemUncheckedCreateNestedManyWithoutServiceInput = {
+    create?: XOR<deliverychallanitemCreateWithoutServiceInput, deliverychallanitemUncheckedCreateWithoutServiceInput> | deliverychallanitemCreateWithoutServiceInput[] | deliverychallanitemUncheckedCreateWithoutServiceInput[]
+    connectOrCreate?: deliverychallanitemCreateOrConnectWithoutServiceInput | deliverychallanitemCreateOrConnectWithoutServiceInput[]
+    createMany?: deliverychallanitemCreateManyServiceInputEnvelope
+    connect?: deliverychallanitemWhereUniqueInput | deliverychallanitemWhereUniqueInput[]
   }
 
   export type invoiceitemUpdateManyWithoutServiceNestedInput = {
@@ -115948,6 +116243,20 @@ export namespace Prisma {
     update?: salesquotationitemUpdateWithWhereUniqueWithoutServiceInput | salesquotationitemUpdateWithWhereUniqueWithoutServiceInput[]
     updateMany?: salesquotationitemUpdateManyWithWhereWithoutServiceInput | salesquotationitemUpdateManyWithWhereWithoutServiceInput[]
     deleteMany?: salesquotationitemScalarWhereInput | salesquotationitemScalarWhereInput[]
+  }
+
+  export type deliverychallanitemUpdateManyWithoutServiceNestedInput = {
+    create?: XOR<deliverychallanitemCreateWithoutServiceInput, deliverychallanitemUncheckedCreateWithoutServiceInput> | deliverychallanitemCreateWithoutServiceInput[] | deliverychallanitemUncheckedCreateWithoutServiceInput[]
+    connectOrCreate?: deliverychallanitemCreateOrConnectWithoutServiceInput | deliverychallanitemCreateOrConnectWithoutServiceInput[]
+    upsert?: deliverychallanitemUpsertWithWhereUniqueWithoutServiceInput | deliverychallanitemUpsertWithWhereUniqueWithoutServiceInput[]
+    createMany?: deliverychallanitemCreateManyServiceInputEnvelope
+    set?: deliverychallanitemWhereUniqueInput | deliverychallanitemWhereUniqueInput[]
+    disconnect?: deliverychallanitemWhereUniqueInput | deliverychallanitemWhereUniqueInput[]
+    delete?: deliverychallanitemWhereUniqueInput | deliverychallanitemWhereUniqueInput[]
+    connect?: deliverychallanitemWhereUniqueInput | deliverychallanitemWhereUniqueInput[]
+    update?: deliverychallanitemUpdateWithWhereUniqueWithoutServiceInput | deliverychallanitemUpdateWithWhereUniqueWithoutServiceInput[]
+    updateMany?: deliverychallanitemUpdateManyWithWhereWithoutServiceInput | deliverychallanitemUpdateManyWithWhereWithoutServiceInput[]
+    deleteMany?: deliverychallanitemScalarWhereInput | deliverychallanitemScalarWhereInput[]
   }
 
   export type companyUpdateOneRequiredWithoutServiceNestedInput = {
@@ -116006,6 +116315,20 @@ export namespace Prisma {
     update?: salesquotationitemUpdateWithWhereUniqueWithoutServiceInput | salesquotationitemUpdateWithWhereUniqueWithoutServiceInput[]
     updateMany?: salesquotationitemUpdateManyWithWhereWithoutServiceInput | salesquotationitemUpdateManyWithWhereWithoutServiceInput[]
     deleteMany?: salesquotationitemScalarWhereInput | salesquotationitemScalarWhereInput[]
+  }
+
+  export type deliverychallanitemUncheckedUpdateManyWithoutServiceNestedInput = {
+    create?: XOR<deliverychallanitemCreateWithoutServiceInput, deliverychallanitemUncheckedCreateWithoutServiceInput> | deliverychallanitemCreateWithoutServiceInput[] | deliverychallanitemUncheckedCreateWithoutServiceInput[]
+    connectOrCreate?: deliverychallanitemCreateOrConnectWithoutServiceInput | deliverychallanitemCreateOrConnectWithoutServiceInput[]
+    upsert?: deliverychallanitemUpsertWithWhereUniqueWithoutServiceInput | deliverychallanitemUpsertWithWhereUniqueWithoutServiceInput[]
+    createMany?: deliverychallanitemCreateManyServiceInputEnvelope
+    set?: deliverychallanitemWhereUniqueInput | deliverychallanitemWhereUniqueInput[]
+    disconnect?: deliverychallanitemWhereUniqueInput | deliverychallanitemWhereUniqueInput[]
+    delete?: deliverychallanitemWhereUniqueInput | deliverychallanitemWhereUniqueInput[]
+    connect?: deliverychallanitemWhereUniqueInput | deliverychallanitemWhereUniqueInput[]
+    update?: deliverychallanitemUpdateWithWhereUniqueWithoutServiceInput | deliverychallanitemUpdateWithWhereUniqueWithoutServiceInput[]
+    updateMany?: deliverychallanitemUpdateManyWithWhereWithoutServiceInput | deliverychallanitemUpdateManyWithWhereWithoutServiceInput[]
+    deleteMany?: deliverychallanitemScalarWhereInput | deliverychallanitemScalarWhereInput[]
   }
 
   export type productCreateNestedOneWithoutStockInput = {
@@ -116386,6 +116709,13 @@ export namespace Prisma {
     connect?: purchasequotationitemWhereUniqueInput | purchasequotationitemWhereUniqueInput[]
   }
 
+  export type deliverychallanitemCreateNestedManyWithoutUomInput = {
+    create?: XOR<deliverychallanitemCreateWithoutUomInput, deliverychallanitemUncheckedCreateWithoutUomInput> | deliverychallanitemCreateWithoutUomInput[] | deliverychallanitemUncheckedCreateWithoutUomInput[]
+    connectOrCreate?: deliverychallanitemCreateOrConnectWithoutUomInput | deliverychallanitemCreateOrConnectWithoutUomInput[]
+    createMany?: deliverychallanitemCreateManyUomInputEnvelope
+    connect?: deliverychallanitemWhereUniqueInput | deliverychallanitemWhereUniqueInput[]
+  }
+
   export type uomUncheckedCreateNestedManyWithoutBaseUnitInput = {
     create?: XOR<uomCreateWithoutBaseUnitInput, uomUncheckedCreateWithoutBaseUnitInput> | uomCreateWithoutBaseUnitInput[] | uomUncheckedCreateWithoutBaseUnitInput[]
     connectOrCreate?: uomCreateOrConnectWithoutBaseUnitInput | uomCreateOrConnectWithoutBaseUnitInput[]
@@ -116468,6 +116798,13 @@ export namespace Prisma {
     connectOrCreate?: purchasequotationitemCreateOrConnectWithoutUomInput | purchasequotationitemCreateOrConnectWithoutUomInput[]
     createMany?: purchasequotationitemCreateManyUomInputEnvelope
     connect?: purchasequotationitemWhereUniqueInput | purchasequotationitemWhereUniqueInput[]
+  }
+
+  export type deliverychallanitemUncheckedCreateNestedManyWithoutUomInput = {
+    create?: XOR<deliverychallanitemCreateWithoutUomInput, deliverychallanitemUncheckedCreateWithoutUomInput> | deliverychallanitemCreateWithoutUomInput[] | deliverychallanitemUncheckedCreateWithoutUomInput[]
+    connectOrCreate?: deliverychallanitemCreateOrConnectWithoutUomInput | deliverychallanitemCreateOrConnectWithoutUomInput[]
+    createMany?: deliverychallanitemCreateManyUomInputEnvelope
+    connect?: deliverychallanitemWhereUniqueInput | deliverychallanitemWhereUniqueInput[]
   }
 
   export type companyUpdateOneRequiredWithoutUomNestedInput = {
@@ -116656,6 +116993,20 @@ export namespace Prisma {
     deleteMany?: purchasequotationitemScalarWhereInput | purchasequotationitemScalarWhereInput[]
   }
 
+  export type deliverychallanitemUpdateManyWithoutUomNestedInput = {
+    create?: XOR<deliverychallanitemCreateWithoutUomInput, deliverychallanitemUncheckedCreateWithoutUomInput> | deliverychallanitemCreateWithoutUomInput[] | deliverychallanitemUncheckedCreateWithoutUomInput[]
+    connectOrCreate?: deliverychallanitemCreateOrConnectWithoutUomInput | deliverychallanitemCreateOrConnectWithoutUomInput[]
+    upsert?: deliverychallanitemUpsertWithWhereUniqueWithoutUomInput | deliverychallanitemUpsertWithWhereUniqueWithoutUomInput[]
+    createMany?: deliverychallanitemCreateManyUomInputEnvelope
+    set?: deliverychallanitemWhereUniqueInput | deliverychallanitemWhereUniqueInput[]
+    disconnect?: deliverychallanitemWhereUniqueInput | deliverychallanitemWhereUniqueInput[]
+    delete?: deliverychallanitemWhereUniqueInput | deliverychallanitemWhereUniqueInput[]
+    connect?: deliverychallanitemWhereUniqueInput | deliverychallanitemWhereUniqueInput[]
+    update?: deliverychallanitemUpdateWithWhereUniqueWithoutUomInput | deliverychallanitemUpdateWithWhereUniqueWithoutUomInput[]
+    updateMany?: deliverychallanitemUpdateManyWithWhereWithoutUomInput | deliverychallanitemUpdateManyWithWhereWithoutUomInput[]
+    deleteMany?: deliverychallanitemScalarWhereInput | deliverychallanitemScalarWhereInput[]
+  }
+
   export type uomUncheckedUpdateManyWithoutBaseUnitNestedInput = {
     create?: XOR<uomCreateWithoutBaseUnitInput, uomUncheckedCreateWithoutBaseUnitInput> | uomCreateWithoutBaseUnitInput[] | uomUncheckedCreateWithoutBaseUnitInput[]
     connectOrCreate?: uomCreateOrConnectWithoutBaseUnitInput | uomCreateOrConnectWithoutBaseUnitInput[]
@@ -116822,6 +117173,20 @@ export namespace Prisma {
     update?: purchasequotationitemUpdateWithWhereUniqueWithoutUomInput | purchasequotationitemUpdateWithWhereUniqueWithoutUomInput[]
     updateMany?: purchasequotationitemUpdateManyWithWhereWithoutUomInput | purchasequotationitemUpdateManyWithWhereWithoutUomInput[]
     deleteMany?: purchasequotationitemScalarWhereInput | purchasequotationitemScalarWhereInput[]
+  }
+
+  export type deliverychallanitemUncheckedUpdateManyWithoutUomNestedInput = {
+    create?: XOR<deliverychallanitemCreateWithoutUomInput, deliverychallanitemUncheckedCreateWithoutUomInput> | deliverychallanitemCreateWithoutUomInput[] | deliverychallanitemUncheckedCreateWithoutUomInput[]
+    connectOrCreate?: deliverychallanitemCreateOrConnectWithoutUomInput | deliverychallanitemCreateOrConnectWithoutUomInput[]
+    upsert?: deliverychallanitemUpsertWithWhereUniqueWithoutUomInput | deliverychallanitemUpsertWithWhereUniqueWithoutUomInput[]
+    createMany?: deliverychallanitemCreateManyUomInputEnvelope
+    set?: deliverychallanitemWhereUniqueInput | deliverychallanitemWhereUniqueInput[]
+    disconnect?: deliverychallanitemWhereUniqueInput | deliverychallanitemWhereUniqueInput[]
+    delete?: deliverychallanitemWhereUniqueInput | deliverychallanitemWhereUniqueInput[]
+    connect?: deliverychallanitemWhereUniqueInput | deliverychallanitemWhereUniqueInput[]
+    update?: deliverychallanitemUpdateWithWhereUniqueWithoutUomInput | deliverychallanitemUpdateWithWhereUniqueWithoutUomInput[]
+    updateMany?: deliverychallanitemUpdateManyWithWhereWithoutUomInput | deliverychallanitemUpdateManyWithWhereWithoutUomInput[]
+    deleteMany?: deliverychallanitemScalarWhereInput | deliverychallanitemScalarWhereInput[]
   }
 
   export type passwordrequestCreateNestedManyWithoutUserInput = {
@@ -119409,6 +119774,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -119501,6 +119867,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -119700,6 +120067,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -119792,6 +120160,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -119949,6 +120318,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -120041,6 +120411,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -120237,6 +120608,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -120329,6 +120701,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -120466,6 +120839,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -120558,6 +120932,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -120698,6 +121073,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -120790,6 +121166,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -120945,6 +121322,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -121037,6 +121415,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -121182,6 +121561,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -121274,6 +121654,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -121365,6 +121746,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -121457,6 +121839,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -121663,6 +122046,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -121755,6 +122139,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -123453,6 +123838,7 @@ export namespace Prisma {
     invoiceitem?: invoiceitemCreateNestedManyWithoutServiceInput
     salesorderitem?: salesorderitemCreateNestedManyWithoutServiceInput
     salesquotationitem?: salesquotationitemCreateNestedManyWithoutServiceInput
+    deliverychallanitem?: deliverychallanitemCreateNestedManyWithoutServiceInput
     uom: uomCreateNestedOneWithoutServiceInput
   }
 
@@ -123471,6 +123857,7 @@ export namespace Prisma {
     invoiceitem?: invoiceitemUncheckedCreateNestedManyWithoutServiceInput
     salesorderitem?: salesorderitemUncheckedCreateNestedManyWithoutServiceInput
     salesquotationitem?: salesquotationitemUncheckedCreateNestedManyWithoutServiceInput
+    deliverychallanitem?: deliverychallanitemUncheckedCreateNestedManyWithoutServiceInput
   }
 
   export type serviceCreateOrConnectWithoutCompanyInput = {
@@ -123593,6 +123980,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemCreateNestedManyWithoutUomInput
     purchaseorderitem?: purchaseorderitemCreateNestedManyWithoutUomInput
     purchasequotationitem?: purchasequotationitemCreateNestedManyWithoutUomInput
+    deliverychallanitem?: deliverychallanitemCreateNestedManyWithoutUomInput
   }
 
   export type uomUncheckedCreateWithoutCompanyInput = {
@@ -123618,6 +124006,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUncheckedCreateNestedManyWithoutUomInput
     purchaseorderitem?: purchaseorderitemUncheckedCreateNestedManyWithoutUomInput
     purchasequotationitem?: purchasequotationitemUncheckedCreateNestedManyWithoutUomInput
+    deliverychallanitem?: deliverychallanitemUncheckedCreateNestedManyWithoutUomInput
   }
 
   export type uomCreateOrConnectWithoutCompanyInput = {
@@ -125633,6 +126022,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -125725,6 +126115,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -126481,6 +126872,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -126573,6 +126965,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -126893,6 +127286,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -126985,6 +127379,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -127374,14 +127769,18 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     description?: string | null
-    product: productCreateNestedOneWithoutDeliverychallanitemInput
-    warehouse: warehouseCreateNestedOneWithoutDeliverychallanitemInput
+    product?: productCreateNestedOneWithoutDeliverychallanitemInput
+    service?: serviceCreateNestedOneWithoutDeliverychallanitemInput
+    warehouse?: warehouseCreateNestedOneWithoutDeliverychallanitemInput
+    uom?: uomCreateNestedOneWithoutDeliverychallanitemInput
   }
 
   export type deliverychallanitemUncheckedCreateWithoutDeliverychallanInput = {
     id?: number
-    productId: number
-    warehouseId: number
+    productId?: number | null
+    serviceId?: number | null
+    warehouseId?: number | null
+    uomId?: number | null
     quantity: number
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -127524,6 +127923,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -127616,6 +128016,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -128035,8 +128436,10 @@ export namespace Prisma {
     NOT?: deliverychallanitemScalarWhereInput | deliverychallanitemScalarWhereInput[]
     id?: IntFilter<"deliverychallanitem"> | number
     challanId?: IntFilter<"deliverychallanitem"> | number
-    productId?: IntFilter<"deliverychallanitem"> | number
-    warehouseId?: IntFilter<"deliverychallanitem"> | number
+    productId?: IntNullableFilter<"deliverychallanitem"> | number | null
+    serviceId?: IntNullableFilter<"deliverychallanitem"> | number | null
+    warehouseId?: IntNullableFilter<"deliverychallanitem"> | number | null
+    uomId?: IntNullableFilter<"deliverychallanitem"> | number | null
     quantity?: FloatFilter<"deliverychallanitem"> | number
     createdAt?: DateTimeFilter<"deliverychallanitem"> | Date | string
     updatedAt?: DateTimeFilter<"deliverychallanitem"> | Date | string
@@ -128213,6 +128616,46 @@ export namespace Prisma {
     create: XOR<productCreateWithoutDeliverychallanitemInput, productUncheckedCreateWithoutDeliverychallanitemInput>
   }
 
+  export type serviceCreateWithoutDeliverychallanitemInput = {
+    name: string
+    sku?: string | null
+    description?: string | null
+    price: number
+    taxRate?: number
+    allowInInvoices?: boolean
+    remarks?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    invoiceitem?: invoiceitemCreateNestedManyWithoutServiceInput
+    salesorderitem?: salesorderitemCreateNestedManyWithoutServiceInput
+    salesquotationitem?: salesquotationitemCreateNestedManyWithoutServiceInput
+    company: companyCreateNestedOneWithoutServiceInput
+    uom: uomCreateNestedOneWithoutServiceInput
+  }
+
+  export type serviceUncheckedCreateWithoutDeliverychallanitemInput = {
+    id?: number
+    name: string
+    sku?: string | null
+    description?: string | null
+    uomId: number
+    price: number
+    taxRate?: number
+    allowInInvoices?: boolean
+    remarks?: string | null
+    companyId: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    invoiceitem?: invoiceitemUncheckedCreateNestedManyWithoutServiceInput
+    salesorderitem?: salesorderitemUncheckedCreateNestedManyWithoutServiceInput
+    salesquotationitem?: salesquotationitemUncheckedCreateNestedManyWithoutServiceInput
+  }
+
+  export type serviceCreateOrConnectWithoutDeliverychallanitemInput = {
+    where: serviceWhereUniqueInput
+    create: XOR<serviceCreateWithoutDeliverychallanitemInput, serviceUncheckedCreateWithoutDeliverychallanitemInput>
+  }
+
   export type warehouseCreateWithoutDeliverychallanitemInput = {
     name: string
     location: string
@@ -128281,6 +128724,62 @@ export namespace Prisma {
   export type warehouseCreateOrConnectWithoutDeliverychallanitemInput = {
     where: warehouseWhereUniqueInput
     create: XOR<warehouseCreateWithoutDeliverychallanitemInput, warehouseUncheckedCreateWithoutDeliverychallanitemInput>
+  }
+
+  export type uomCreateWithoutDeliverychallanitemInput = {
+    category: string
+    unitName: string
+    symbol?: string | null
+    weightPerUnit?: string | null
+    uomType?: string
+    conversionRate?: number | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    company: companyCreateNestedOneWithoutUomInput
+    baseUnit?: uomCreateNestedOneWithoutChildUnitsInput
+    childUnits?: uomCreateNestedManyWithoutBaseUnitInput
+    product?: productCreateNestedManyWithoutUomInput
+    product_purchase?: productCreateNestedManyWithoutPurchaseUomInput
+    product_sales?: productCreateNestedManyWithoutSalesUomInput
+    service?: serviceCreateNestedManyWithoutUomInput
+    purchasebillitem?: purchasebillitemCreateNestedManyWithoutUomInput
+    invoiceitem?: invoiceitemCreateNestedManyWithoutUomInput
+    posinvoiceitem?: posinvoiceitemCreateNestedManyWithoutUomInput
+    salesorderitem?: salesorderitemCreateNestedManyWithoutUomInput
+    salesquotationitem?: salesquotationitemCreateNestedManyWithoutUomInput
+    purchaseorderitem?: purchaseorderitemCreateNestedManyWithoutUomInput
+    purchasequotationitem?: purchasequotationitemCreateNestedManyWithoutUomInput
+  }
+
+  export type uomUncheckedCreateWithoutDeliverychallanitemInput = {
+    id?: number
+    category: string
+    unitName: string
+    symbol?: string | null
+    weightPerUnit?: string | null
+    uomType?: string
+    baseUnitId?: number | null
+    conversionRate?: number | null
+    companyId: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    childUnits?: uomUncheckedCreateNestedManyWithoutBaseUnitInput
+    product?: productUncheckedCreateNestedManyWithoutUomInput
+    product_purchase?: productUncheckedCreateNestedManyWithoutPurchaseUomInput
+    product_sales?: productUncheckedCreateNestedManyWithoutSalesUomInput
+    service?: serviceUncheckedCreateNestedManyWithoutUomInput
+    purchasebillitem?: purchasebillitemUncheckedCreateNestedManyWithoutUomInput
+    invoiceitem?: invoiceitemUncheckedCreateNestedManyWithoutUomInput
+    posinvoiceitem?: posinvoiceitemUncheckedCreateNestedManyWithoutUomInput
+    salesorderitem?: salesorderitemUncheckedCreateNestedManyWithoutUomInput
+    salesquotationitem?: salesquotationitemUncheckedCreateNestedManyWithoutUomInput
+    purchaseorderitem?: purchaseorderitemUncheckedCreateNestedManyWithoutUomInput
+    purchasequotationitem?: purchasequotationitemUncheckedCreateNestedManyWithoutUomInput
+  }
+
+  export type uomCreateOrConnectWithoutDeliverychallanitemInput = {
+    where: uomWhereUniqueInput
+    create: XOR<uomCreateWithoutDeliverychallanitemInput, uomUncheckedCreateWithoutDeliverychallanitemInput>
   }
 
   export type deliverychallanUpsertWithoutDeliverychallanitemInput = {
@@ -128449,6 +128948,52 @@ export namespace Prisma {
     inventory_consumption?: inventory_consumptionUncheckedUpdateManyWithoutProductNestedInput
   }
 
+  export type serviceUpsertWithoutDeliverychallanitemInput = {
+    update: XOR<serviceUpdateWithoutDeliverychallanitemInput, serviceUncheckedUpdateWithoutDeliverychallanitemInput>
+    create: XOR<serviceCreateWithoutDeliverychallanitemInput, serviceUncheckedCreateWithoutDeliverychallanitemInput>
+    where?: serviceWhereInput
+  }
+
+  export type serviceUpdateToOneWithWhereWithoutDeliverychallanitemInput = {
+    where?: serviceWhereInput
+    data: XOR<serviceUpdateWithoutDeliverychallanitemInput, serviceUncheckedUpdateWithoutDeliverychallanitemInput>
+  }
+
+  export type serviceUpdateWithoutDeliverychallanitemInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    sku?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    price?: FloatFieldUpdateOperationsInput | number
+    taxRate?: FloatFieldUpdateOperationsInput | number
+    allowInInvoices?: BoolFieldUpdateOperationsInput | boolean
+    remarks?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    invoiceitem?: invoiceitemUpdateManyWithoutServiceNestedInput
+    salesorderitem?: salesorderitemUpdateManyWithoutServiceNestedInput
+    salesquotationitem?: salesquotationitemUpdateManyWithoutServiceNestedInput
+    company?: companyUpdateOneRequiredWithoutServiceNestedInput
+    uom?: uomUpdateOneRequiredWithoutServiceNestedInput
+  }
+
+  export type serviceUncheckedUpdateWithoutDeliverychallanitemInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    sku?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    uomId?: IntFieldUpdateOperationsInput | number
+    price?: FloatFieldUpdateOperationsInput | number
+    taxRate?: FloatFieldUpdateOperationsInput | number
+    allowInInvoices?: BoolFieldUpdateOperationsInput | boolean
+    remarks?: NullableStringFieldUpdateOperationsInput | string | null
+    companyId?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    invoiceitem?: invoiceitemUncheckedUpdateManyWithoutServiceNestedInput
+    salesorderitem?: salesorderitemUncheckedUpdateManyWithoutServiceNestedInput
+    salesquotationitem?: salesquotationitemUncheckedUpdateManyWithoutServiceNestedInput
+  }
+
   export type warehouseUpsertWithoutDeliverychallanitemInput = {
     update: XOR<warehouseUpdateWithoutDeliverychallanitemInput, warehouseUncheckedUpdateWithoutDeliverychallanitemInput>
     create: XOR<warehouseCreateWithoutDeliverychallanitemInput, warehouseUncheckedCreateWithoutDeliverychallanitemInput>
@@ -128525,10 +129070,73 @@ export namespace Prisma {
     inventory_batch?: inventory_batchUncheckedUpdateManyWithoutWarehouseNestedInput
   }
 
+  export type uomUpsertWithoutDeliverychallanitemInput = {
+    update: XOR<uomUpdateWithoutDeliverychallanitemInput, uomUncheckedUpdateWithoutDeliverychallanitemInput>
+    create: XOR<uomCreateWithoutDeliverychallanitemInput, uomUncheckedCreateWithoutDeliverychallanitemInput>
+    where?: uomWhereInput
+  }
+
+  export type uomUpdateToOneWithWhereWithoutDeliverychallanitemInput = {
+    where?: uomWhereInput
+    data: XOR<uomUpdateWithoutDeliverychallanitemInput, uomUncheckedUpdateWithoutDeliverychallanitemInput>
+  }
+
+  export type uomUpdateWithoutDeliverychallanitemInput = {
+    category?: StringFieldUpdateOperationsInput | string
+    unitName?: StringFieldUpdateOperationsInput | string
+    symbol?: NullableStringFieldUpdateOperationsInput | string | null
+    weightPerUnit?: NullableStringFieldUpdateOperationsInput | string | null
+    uomType?: StringFieldUpdateOperationsInput | string
+    conversionRate?: NullableFloatFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    company?: companyUpdateOneRequiredWithoutUomNestedInput
+    baseUnit?: uomUpdateOneWithoutChildUnitsNestedInput
+    childUnits?: uomUpdateManyWithoutBaseUnitNestedInput
+    product?: productUpdateManyWithoutUomNestedInput
+    product_purchase?: productUpdateManyWithoutPurchaseUomNestedInput
+    product_sales?: productUpdateManyWithoutSalesUomNestedInput
+    service?: serviceUpdateManyWithoutUomNestedInput
+    purchasebillitem?: purchasebillitemUpdateManyWithoutUomNestedInput
+    invoiceitem?: invoiceitemUpdateManyWithoutUomNestedInput
+    posinvoiceitem?: posinvoiceitemUpdateManyWithoutUomNestedInput
+    salesorderitem?: salesorderitemUpdateManyWithoutUomNestedInput
+    salesquotationitem?: salesquotationitemUpdateManyWithoutUomNestedInput
+    purchaseorderitem?: purchaseorderitemUpdateManyWithoutUomNestedInput
+    purchasequotationitem?: purchasequotationitemUpdateManyWithoutUomNestedInput
+  }
+
+  export type uomUncheckedUpdateWithoutDeliverychallanitemInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    category?: StringFieldUpdateOperationsInput | string
+    unitName?: StringFieldUpdateOperationsInput | string
+    symbol?: NullableStringFieldUpdateOperationsInput | string | null
+    weightPerUnit?: NullableStringFieldUpdateOperationsInput | string | null
+    uomType?: StringFieldUpdateOperationsInput | string
+    baseUnitId?: NullableIntFieldUpdateOperationsInput | number | null
+    conversionRate?: NullableFloatFieldUpdateOperationsInput | number | null
+    companyId?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    childUnits?: uomUncheckedUpdateManyWithoutBaseUnitNestedInput
+    product?: productUncheckedUpdateManyWithoutUomNestedInput
+    product_purchase?: productUncheckedUpdateManyWithoutPurchaseUomNestedInput
+    product_sales?: productUncheckedUpdateManyWithoutSalesUomNestedInput
+    service?: serviceUncheckedUpdateManyWithoutUomNestedInput
+    purchasebillitem?: purchasebillitemUncheckedUpdateManyWithoutUomNestedInput
+    invoiceitem?: invoiceitemUncheckedUpdateManyWithoutUomNestedInput
+    posinvoiceitem?: posinvoiceitemUncheckedUpdateManyWithoutUomNestedInput
+    salesorderitem?: salesorderitemUncheckedUpdateManyWithoutUomNestedInput
+    salesquotationitem?: salesquotationitemUncheckedUpdateManyWithoutUomNestedInput
+    purchaseorderitem?: purchaseorderitemUncheckedUpdateManyWithoutUomNestedInput
+    purchasequotationitem?: purchasequotationitemUncheckedUpdateManyWithoutUomNestedInput
+  }
+
   export type companyCreateWithoutExpenseentryInput = {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -128621,6 +129229,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -128728,6 +129337,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -128820,6 +129430,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -128911,6 +129522,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -129003,6 +129615,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -129432,6 +130045,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -129524,6 +130138,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -130275,6 +130890,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -130367,6 +130983,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -130474,6 +131091,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -130566,6 +131184,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -130657,6 +131276,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -130749,6 +131369,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -130959,6 +131580,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -131051,6 +131673,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -131660,6 +132283,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -131752,6 +132376,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -132129,6 +132754,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -132221,6 +132847,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -132628,6 +133255,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -132720,6 +133348,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -133463,6 +134092,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -133555,6 +134185,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -134299,6 +134930,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     salesorderitem?: salesorderitemCreateNestedManyWithoutServiceInput
     salesquotationitem?: salesquotationitemCreateNestedManyWithoutServiceInput
+    deliverychallanitem?: deliverychallanitemCreateNestedManyWithoutServiceInput
     company: companyCreateNestedOneWithoutServiceInput
     uom: uomCreateNestedOneWithoutServiceInput
   }
@@ -134318,6 +134950,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     salesorderitem?: salesorderitemUncheckedCreateNestedManyWithoutServiceInput
     salesquotationitem?: salesquotationitemUncheckedCreateNestedManyWithoutServiceInput
+    deliverychallanitem?: deliverychallanitemUncheckedCreateNestedManyWithoutServiceInput
   }
 
   export type serviceCreateOrConnectWithoutInvoiceitemInput = {
@@ -134417,6 +135050,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemCreateNestedManyWithoutUomInput
     purchaseorderitem?: purchaseorderitemCreateNestedManyWithoutUomInput
     purchasequotationitem?: purchasequotationitemCreateNestedManyWithoutUomInput
+    deliverychallanitem?: deliverychallanitemCreateNestedManyWithoutUomInput
   }
 
   export type uomUncheckedCreateWithoutInvoiceitemInput = {
@@ -134442,6 +135076,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUncheckedCreateNestedManyWithoutUomInput
     purchaseorderitem?: purchaseorderitemUncheckedCreateNestedManyWithoutUomInput
     purchasequotationitem?: purchasequotationitemUncheckedCreateNestedManyWithoutUomInput
+    deliverychallanitem?: deliverychallanitemUncheckedCreateNestedManyWithoutUomInput
   }
 
   export type uomCreateOrConnectWithoutInvoiceitemInput = {
@@ -134684,6 +135319,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     salesorderitem?: salesorderitemUpdateManyWithoutServiceNestedInput
     salesquotationitem?: salesquotationitemUpdateManyWithoutServiceNestedInput
+    deliverychallanitem?: deliverychallanitemUpdateManyWithoutServiceNestedInput
     company?: companyUpdateOneRequiredWithoutServiceNestedInput
     uom?: uomUpdateOneRequiredWithoutServiceNestedInput
   }
@@ -134703,6 +135339,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     salesorderitem?: salesorderitemUncheckedUpdateManyWithoutServiceNestedInput
     salesquotationitem?: salesquotationitemUncheckedUpdateManyWithoutServiceNestedInput
+    deliverychallanitem?: deliverychallanitemUncheckedUpdateManyWithoutServiceNestedInput
   }
 
   export type warehouseUpsertWithoutInvoiceitemInput = {
@@ -134814,6 +135451,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUpdateManyWithoutUomNestedInput
     purchaseorderitem?: purchaseorderitemUpdateManyWithoutUomNestedInput
     purchasequotationitem?: purchasequotationitemUpdateManyWithoutUomNestedInput
+    deliverychallanitem?: deliverychallanitemUpdateManyWithoutUomNestedInput
   }
 
   export type uomUncheckedUpdateWithoutInvoiceitemInput = {
@@ -134839,12 +135477,14 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUncheckedUpdateManyWithoutUomNestedInput
     purchaseorderitem?: purchaseorderitemUncheckedUpdateManyWithoutUomNestedInput
     purchasequotationitem?: purchasequotationitemUncheckedUpdateManyWithoutUomNestedInput
+    deliverychallanitem?: deliverychallanitemUncheckedUpdateManyWithoutUomNestedInput
   }
 
   export type companyCreateWithoutJournalentryInput = {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -134937,6 +135577,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -135097,6 +135738,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -135189,6 +135831,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -135296,6 +135939,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -135388,6 +136032,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -136375,6 +137020,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -136467,6 +137113,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -137085,6 +137732,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -137177,6 +137825,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -137320,6 +137969,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -137412,6 +138062,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -137545,6 +138196,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -137637,6 +138289,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -138185,6 +138838,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -138277,6 +138931,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -138781,6 +139436,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -138873,6 +139529,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -139033,6 +139690,7 @@ export namespace Prisma {
     name?: StringFilter<"company"> | string
     email?: StringFilter<"company"> | string
     logo?: StringNullableFilter<"company"> | string | null
+    status?: StringFilter<"company"> | string
     startDate?: DateTimeNullableFilter<"company"> | Date | string | null
     endDate?: DateTimeNullableFilter<"company"> | Date | string | null
     invoiceTemplate?: StringFilter<"company"> | string
@@ -139209,6 +139867,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -139301,6 +139960,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -139604,6 +140264,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -139696,6 +140357,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -140179,6 +140841,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemCreateNestedManyWithoutUomInput
     purchaseorderitem?: purchaseorderitemCreateNestedManyWithoutUomInput
     purchasequotationitem?: purchasequotationitemCreateNestedManyWithoutUomInput
+    deliverychallanitem?: deliverychallanitemCreateNestedManyWithoutUomInput
   }
 
   export type uomUncheckedCreateWithoutPosinvoiceitemInput = {
@@ -140204,6 +140867,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUncheckedCreateNestedManyWithoutUomInput
     purchaseorderitem?: purchaseorderitemUncheckedCreateNestedManyWithoutUomInput
     purchasequotationitem?: purchasequotationitemUncheckedCreateNestedManyWithoutUomInput
+    deliverychallanitem?: deliverychallanitemUncheckedCreateNestedManyWithoutUomInput
   }
 
   export type uomCreateOrConnectWithoutPosinvoiceitemInput = {
@@ -140474,6 +141138,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUpdateManyWithoutUomNestedInput
     purchaseorderitem?: purchaseorderitemUpdateManyWithoutUomNestedInput
     purchasequotationitem?: purchasequotationitemUpdateManyWithoutUomNestedInput
+    deliverychallanitem?: deliverychallanitemUpdateManyWithoutUomNestedInput
   }
 
   export type uomUncheckedUpdateWithoutPosinvoiceitemInput = {
@@ -140499,6 +141164,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUncheckedUpdateManyWithoutUomNestedInput
     purchaseorderitem?: purchaseorderitemUncheckedUpdateManyWithoutUomNestedInput
     purchasequotationitem?: purchasequotationitemUncheckedUpdateManyWithoutUomNestedInput
+    deliverychallanitem?: deliverychallanitemUncheckedUpdateManyWithoutUomNestedInput
   }
 
   export type deliverychallanitemCreateWithoutProductInput = {
@@ -140507,13 +141173,17 @@ export namespace Prisma {
     updatedAt?: Date | string
     description?: string | null
     deliverychallan: deliverychallanCreateNestedOneWithoutDeliverychallanitemInput
-    warehouse: warehouseCreateNestedOneWithoutDeliverychallanitemInput
+    service?: serviceCreateNestedOneWithoutDeliverychallanitemInput
+    warehouse?: warehouseCreateNestedOneWithoutDeliverychallanitemInput
+    uom?: uomCreateNestedOneWithoutDeliverychallanitemInput
   }
 
   export type deliverychallanitemUncheckedCreateWithoutProductInput = {
     id?: number
     challanId: number
-    warehouseId: number
+    serviceId?: number | null
+    warehouseId?: number | null
+    uomId?: number | null
     quantity: number
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -140743,6 +141413,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -140835,6 +141506,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -140949,6 +141621,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemCreateNestedManyWithoutUomInput
     purchaseorderitem?: purchaseorderitemCreateNestedManyWithoutUomInput
     purchasequotationitem?: purchasequotationitemCreateNestedManyWithoutUomInput
+    deliverychallanitem?: deliverychallanitemCreateNestedManyWithoutUomInput
   }
 
   export type uomUncheckedCreateWithoutProductInput = {
@@ -140974,6 +141647,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUncheckedCreateNestedManyWithoutUomInput
     purchaseorderitem?: purchaseorderitemUncheckedCreateNestedManyWithoutUomInput
     purchasequotationitem?: purchasequotationitemUncheckedCreateNestedManyWithoutUomInput
+    deliverychallanitem?: deliverychallanitemUncheckedCreateNestedManyWithoutUomInput
   }
 
   export type uomCreateOrConnectWithoutProductInput = {
@@ -141003,6 +141677,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemCreateNestedManyWithoutUomInput
     purchaseorderitem?: purchaseorderitemCreateNestedManyWithoutUomInput
     purchasequotationitem?: purchasequotationitemCreateNestedManyWithoutUomInput
+    deliverychallanitem?: deliverychallanitemCreateNestedManyWithoutUomInput
   }
 
   export type uomUncheckedCreateWithoutProduct_purchaseInput = {
@@ -141028,6 +141703,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUncheckedCreateNestedManyWithoutUomInput
     purchaseorderitem?: purchaseorderitemUncheckedCreateNestedManyWithoutUomInput
     purchasequotationitem?: purchasequotationitemUncheckedCreateNestedManyWithoutUomInput
+    deliverychallanitem?: deliverychallanitemUncheckedCreateNestedManyWithoutUomInput
   }
 
   export type uomCreateOrConnectWithoutProduct_purchaseInput = {
@@ -141057,6 +141733,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemCreateNestedManyWithoutUomInput
     purchaseorderitem?: purchaseorderitemCreateNestedManyWithoutUomInput
     purchasequotationitem?: purchasequotationitemCreateNestedManyWithoutUomInput
+    deliverychallanitem?: deliverychallanitemCreateNestedManyWithoutUomInput
   }
 
   export type uomUncheckedCreateWithoutProduct_salesInput = {
@@ -141082,6 +141759,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUncheckedCreateNestedManyWithoutUomInput
     purchaseorderitem?: purchaseorderitemUncheckedCreateNestedManyWithoutUomInput
     purchasequotationitem?: purchasequotationitemUncheckedCreateNestedManyWithoutUomInput
+    deliverychallanitem?: deliverychallanitemUncheckedCreateNestedManyWithoutUomInput
   }
 
   export type uomCreateOrConnectWithoutProduct_salesInput = {
@@ -141680,6 +142358,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -141772,6 +142451,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -141892,6 +142572,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUpdateManyWithoutUomNestedInput
     purchaseorderitem?: purchaseorderitemUpdateManyWithoutUomNestedInput
     purchasequotationitem?: purchasequotationitemUpdateManyWithoutUomNestedInput
+    deliverychallanitem?: deliverychallanitemUpdateManyWithoutUomNestedInput
   }
 
   export type uomUncheckedUpdateWithoutProductInput = {
@@ -141917,6 +142598,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUncheckedUpdateManyWithoutUomNestedInput
     purchaseorderitem?: purchaseorderitemUncheckedUpdateManyWithoutUomNestedInput
     purchasequotationitem?: purchasequotationitemUncheckedUpdateManyWithoutUomNestedInput
+    deliverychallanitem?: deliverychallanitemUncheckedUpdateManyWithoutUomNestedInput
   }
 
   export type uomUpsertWithoutProduct_purchaseInput = {
@@ -141952,6 +142634,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUpdateManyWithoutUomNestedInput
     purchaseorderitem?: purchaseorderitemUpdateManyWithoutUomNestedInput
     purchasequotationitem?: purchasequotationitemUpdateManyWithoutUomNestedInput
+    deliverychallanitem?: deliverychallanitemUpdateManyWithoutUomNestedInput
   }
 
   export type uomUncheckedUpdateWithoutProduct_purchaseInput = {
@@ -141977,6 +142660,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUncheckedUpdateManyWithoutUomNestedInput
     purchaseorderitem?: purchaseorderitemUncheckedUpdateManyWithoutUomNestedInput
     purchasequotationitem?: purchasequotationitemUncheckedUpdateManyWithoutUomNestedInput
+    deliverychallanitem?: deliverychallanitemUncheckedUpdateManyWithoutUomNestedInput
   }
 
   export type uomUpsertWithoutProduct_salesInput = {
@@ -142012,6 +142696,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUpdateManyWithoutUomNestedInput
     purchaseorderitem?: purchaseorderitemUpdateManyWithoutUomNestedInput
     purchasequotationitem?: purchasequotationitemUpdateManyWithoutUomNestedInput
+    deliverychallanitem?: deliverychallanitemUpdateManyWithoutUomNestedInput
   }
 
   export type uomUncheckedUpdateWithoutProduct_salesInput = {
@@ -142037,6 +142722,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUncheckedUpdateManyWithoutUomNestedInput
     purchaseorderitem?: purchaseorderitemUncheckedUpdateManyWithoutUomNestedInput
     purchasequotationitem?: purchasequotationitemUncheckedUpdateManyWithoutUomNestedInput
+    deliverychallanitem?: deliverychallanitemUncheckedUpdateManyWithoutUomNestedInput
   }
 
   export type purchaseorderitemUpsertWithWhereUniqueWithoutProductInput = {
@@ -142501,6 +143187,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -142593,6 +143280,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -143204,6 +143892,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -143296,6 +143985,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -144007,6 +144697,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemCreateNestedManyWithoutUomInput
     purchaseorderitem?: purchaseorderitemCreateNestedManyWithoutUomInput
     purchasequotationitem?: purchasequotationitemCreateNestedManyWithoutUomInput
+    deliverychallanitem?: deliverychallanitemCreateNestedManyWithoutUomInput
   }
 
   export type uomUncheckedCreateWithoutPurchasebillitemInput = {
@@ -144032,6 +144723,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUncheckedCreateNestedManyWithoutUomInput
     purchaseorderitem?: purchaseorderitemUncheckedCreateNestedManyWithoutUomInput
     purchasequotationitem?: purchasequotationitemUncheckedCreateNestedManyWithoutUomInput
+    deliverychallanitem?: deliverychallanitemUncheckedCreateNestedManyWithoutUomInput
   }
 
   export type uomCreateOrConnectWithoutPurchasebillitemInput = {
@@ -144358,6 +145050,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUpdateManyWithoutUomNestedInput
     purchaseorderitem?: purchaseorderitemUpdateManyWithoutUomNestedInput
     purchasequotationitem?: purchasequotationitemUpdateManyWithoutUomNestedInput
+    deliverychallanitem?: deliverychallanitemUpdateManyWithoutUomNestedInput
   }
 
   export type uomUncheckedUpdateWithoutPurchasebillitemInput = {
@@ -144383,6 +145076,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUncheckedUpdateManyWithoutUomNestedInput
     purchaseorderitem?: purchaseorderitemUncheckedUpdateManyWithoutUomNestedInput
     purchasequotationitem?: purchasequotationitemUncheckedUpdateManyWithoutUomNestedInput
+    deliverychallanitem?: deliverychallanitemUncheckedUpdateManyWithoutUomNestedInput
   }
 
   export type goodsreceiptnoteCreateWithoutPurchaseorderInput = {
@@ -144539,6 +145233,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -144631,6 +145326,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -144967,6 +145663,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -145059,6 +145756,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -145598,6 +146296,7 @@ export namespace Prisma {
     salesorderitem?: salesorderitemCreateNestedManyWithoutUomInput
     salesquotationitem?: salesquotationitemCreateNestedManyWithoutUomInput
     purchasequotationitem?: purchasequotationitemCreateNestedManyWithoutUomInput
+    deliverychallanitem?: deliverychallanitemCreateNestedManyWithoutUomInput
   }
 
   export type uomUncheckedCreateWithoutPurchaseorderitemInput = {
@@ -145623,6 +146322,7 @@ export namespace Prisma {
     salesorderitem?: salesorderitemUncheckedCreateNestedManyWithoutUomInput
     salesquotationitem?: salesquotationitemUncheckedCreateNestedManyWithoutUomInput
     purchasequotationitem?: purchasequotationitemUncheckedCreateNestedManyWithoutUomInput
+    deliverychallanitem?: deliverychallanitemUncheckedCreateNestedManyWithoutUomInput
   }
 
   export type uomCreateOrConnectWithoutPurchaseorderitemInput = {
@@ -145925,6 +146625,7 @@ export namespace Prisma {
     salesorderitem?: salesorderitemUpdateManyWithoutUomNestedInput
     salesquotationitem?: salesquotationitemUpdateManyWithoutUomNestedInput
     purchasequotationitem?: purchasequotationitemUpdateManyWithoutUomNestedInput
+    deliverychallanitem?: deliverychallanitemUpdateManyWithoutUomNestedInput
   }
 
   export type uomUncheckedUpdateWithoutPurchaseorderitemInput = {
@@ -145950,6 +146651,7 @@ export namespace Prisma {
     salesorderitem?: salesorderitemUncheckedUpdateManyWithoutUomNestedInput
     salesquotationitem?: salesquotationitemUncheckedUpdateManyWithoutUomNestedInput
     purchasequotationitem?: purchasequotationitemUncheckedUpdateManyWithoutUomNestedInput
+    deliverychallanitem?: deliverychallanitemUncheckedUpdateManyWithoutUomNestedInput
   }
 
   export type purchaseorderCreateWithoutPurchasequotationInput = {
@@ -146036,6 +146738,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -146128,6 +146831,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -146464,6 +147168,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -146556,6 +147261,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -147009,6 +147715,7 @@ export namespace Prisma {
     salesorderitem?: salesorderitemCreateNestedManyWithoutUomInput
     salesquotationitem?: salesquotationitemCreateNestedManyWithoutUomInput
     purchaseorderitem?: purchaseorderitemCreateNestedManyWithoutUomInput
+    deliverychallanitem?: deliverychallanitemCreateNestedManyWithoutUomInput
   }
 
   export type uomUncheckedCreateWithoutPurchasequotationitemInput = {
@@ -147034,6 +147741,7 @@ export namespace Prisma {
     salesorderitem?: salesorderitemUncheckedCreateNestedManyWithoutUomInput
     salesquotationitem?: salesquotationitemUncheckedCreateNestedManyWithoutUomInput
     purchaseorderitem?: purchaseorderitemUncheckedCreateNestedManyWithoutUomInput
+    deliverychallanitem?: deliverychallanitemUncheckedCreateNestedManyWithoutUomInput
   }
 
   export type uomCreateOrConnectWithoutPurchasequotationitemInput = {
@@ -147310,6 +148018,7 @@ export namespace Prisma {
     salesorderitem?: salesorderitemUpdateManyWithoutUomNestedInput
     salesquotationitem?: salesquotationitemUpdateManyWithoutUomNestedInput
     purchaseorderitem?: purchaseorderitemUpdateManyWithoutUomNestedInput
+    deliverychallanitem?: deliverychallanitemUpdateManyWithoutUomNestedInput
   }
 
   export type uomUncheckedUpdateWithoutPurchasequotationitemInput = {
@@ -147335,12 +148044,14 @@ export namespace Prisma {
     salesorderitem?: salesorderitemUncheckedUpdateManyWithoutUomNestedInput
     salesquotationitem?: salesquotationitemUncheckedUpdateManyWithoutUomNestedInput
     purchaseorderitem?: purchaseorderitemUncheckedUpdateManyWithoutUomNestedInput
+    deliverychallanitem?: deliverychallanitemUncheckedUpdateManyWithoutUomNestedInput
   }
 
   export type companyCreateWithoutPurchasereturnInput = {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -147433,6 +148144,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -147783,6 +148495,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -147875,6 +148588,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -148616,6 +149330,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -148708,6 +149423,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -149260,6 +149976,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -149352,6 +150069,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -150023,6 +150741,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -150115,6 +150834,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -150473,6 +151193,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -150565,6 +151286,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -151044,6 +151766,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     invoiceitem?: invoiceitemCreateNestedManyWithoutServiceInput
     salesquotationitem?: salesquotationitemCreateNestedManyWithoutServiceInput
+    deliverychallanitem?: deliverychallanitemCreateNestedManyWithoutServiceInput
     company: companyCreateNestedOneWithoutServiceInput
     uom: uomCreateNestedOneWithoutServiceInput
   }
@@ -151063,6 +151786,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     invoiceitem?: invoiceitemUncheckedCreateNestedManyWithoutServiceInput
     salesquotationitem?: salesquotationitemUncheckedCreateNestedManyWithoutServiceInput
+    deliverychallanitem?: deliverychallanitemUncheckedCreateNestedManyWithoutServiceInput
   }
 
   export type serviceCreateOrConnectWithoutSalesorderitemInput = {
@@ -151162,6 +151886,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemCreateNestedManyWithoutUomInput
     purchaseorderitem?: purchaseorderitemCreateNestedManyWithoutUomInput
     purchasequotationitem?: purchasequotationitemCreateNestedManyWithoutUomInput
+    deliverychallanitem?: deliverychallanitemCreateNestedManyWithoutUomInput
   }
 
   export type uomUncheckedCreateWithoutSalesorderitemInput = {
@@ -151187,6 +151912,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUncheckedCreateNestedManyWithoutUomInput
     purchaseorderitem?: purchaseorderitemUncheckedCreateNestedManyWithoutUomInput
     purchasequotationitem?: purchasequotationitemUncheckedCreateNestedManyWithoutUomInput
+    deliverychallanitem?: deliverychallanitemUncheckedCreateNestedManyWithoutUomInput
   }
 
   export type uomCreateOrConnectWithoutSalesorderitemInput = {
@@ -151403,6 +152129,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     invoiceitem?: invoiceitemUpdateManyWithoutServiceNestedInput
     salesquotationitem?: salesquotationitemUpdateManyWithoutServiceNestedInput
+    deliverychallanitem?: deliverychallanitemUpdateManyWithoutServiceNestedInput
     company?: companyUpdateOneRequiredWithoutServiceNestedInput
     uom?: uomUpdateOneRequiredWithoutServiceNestedInput
   }
@@ -151422,6 +152149,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     invoiceitem?: invoiceitemUncheckedUpdateManyWithoutServiceNestedInput
     salesquotationitem?: salesquotationitemUncheckedUpdateManyWithoutServiceNestedInput
+    deliverychallanitem?: deliverychallanitemUncheckedUpdateManyWithoutServiceNestedInput
   }
 
   export type warehouseUpsertWithoutSalesorderitemInput = {
@@ -151533,6 +152261,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUpdateManyWithoutUomNestedInput
     purchaseorderitem?: purchaseorderitemUpdateManyWithoutUomNestedInput
     purchasequotationitem?: purchasequotationitemUpdateManyWithoutUomNestedInput
+    deliverychallanitem?: deliverychallanitemUpdateManyWithoutUomNestedInput
   }
 
   export type uomUncheckedUpdateWithoutSalesorderitemInput = {
@@ -151558,6 +152287,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUncheckedUpdateManyWithoutUomNestedInput
     purchaseorderitem?: purchaseorderitemUncheckedUpdateManyWithoutUomNestedInput
     purchasequotationitem?: purchasequotationitemUncheckedUpdateManyWithoutUomNestedInput
+    deliverychallanitem?: deliverychallanitemUncheckedUpdateManyWithoutUomNestedInput
   }
 
   export type salesorderCreateWithoutSalesquotationInput = {
@@ -151644,6 +152374,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -151736,6 +152467,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -152076,6 +152808,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -152168,6 +152901,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -152561,6 +153295,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     invoiceitem?: invoiceitemCreateNestedManyWithoutServiceInput
     salesorderitem?: salesorderitemCreateNestedManyWithoutServiceInput
+    deliverychallanitem?: deliverychallanitemCreateNestedManyWithoutServiceInput
     company: companyCreateNestedOneWithoutServiceInput
     uom: uomCreateNestedOneWithoutServiceInput
   }
@@ -152580,6 +153315,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     invoiceitem?: invoiceitemUncheckedCreateNestedManyWithoutServiceInput
     salesorderitem?: salesorderitemUncheckedCreateNestedManyWithoutServiceInput
+    deliverychallanitem?: deliverychallanitemUncheckedCreateNestedManyWithoutServiceInput
   }
 
   export type serviceCreateOrConnectWithoutSalesquotationitemInput = {
@@ -152679,6 +153415,7 @@ export namespace Prisma {
     salesorderitem?: salesorderitemCreateNestedManyWithoutUomInput
     purchaseorderitem?: purchaseorderitemCreateNestedManyWithoutUomInput
     purchasequotationitem?: purchasequotationitemCreateNestedManyWithoutUomInput
+    deliverychallanitem?: deliverychallanitemCreateNestedManyWithoutUomInput
   }
 
   export type uomUncheckedCreateWithoutSalesquotationitemInput = {
@@ -152704,6 +153441,7 @@ export namespace Prisma {
     salesorderitem?: salesorderitemUncheckedCreateNestedManyWithoutUomInput
     purchaseorderitem?: purchaseorderitemUncheckedCreateNestedManyWithoutUomInput
     purchasequotationitem?: purchasequotationitemUncheckedCreateNestedManyWithoutUomInput
+    deliverychallanitem?: deliverychallanitemUncheckedCreateNestedManyWithoutUomInput
   }
 
   export type uomCreateOrConnectWithoutSalesquotationitemInput = {
@@ -152912,6 +153650,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     invoiceitem?: invoiceitemUpdateManyWithoutServiceNestedInput
     salesorderitem?: salesorderitemUpdateManyWithoutServiceNestedInput
+    deliverychallanitem?: deliverychallanitemUpdateManyWithoutServiceNestedInput
     company?: companyUpdateOneRequiredWithoutServiceNestedInput
     uom?: uomUpdateOneRequiredWithoutServiceNestedInput
   }
@@ -152931,6 +153670,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     invoiceitem?: invoiceitemUncheckedUpdateManyWithoutServiceNestedInput
     salesorderitem?: salesorderitemUncheckedUpdateManyWithoutServiceNestedInput
+    deliverychallanitem?: deliverychallanitemUncheckedUpdateManyWithoutServiceNestedInput
   }
 
   export type warehouseUpsertWithoutSalesquotationitemInput = {
@@ -153042,6 +153782,7 @@ export namespace Prisma {
     salesorderitem?: salesorderitemUpdateManyWithoutUomNestedInput
     purchaseorderitem?: purchaseorderitemUpdateManyWithoutUomNestedInput
     purchasequotationitem?: purchasequotationitemUpdateManyWithoutUomNestedInput
+    deliverychallanitem?: deliverychallanitemUpdateManyWithoutUomNestedInput
   }
 
   export type uomUncheckedUpdateWithoutSalesquotationitemInput = {
@@ -153067,12 +153808,14 @@ export namespace Prisma {
     salesorderitem?: salesorderitemUncheckedUpdateManyWithoutUomNestedInput
     purchaseorderitem?: purchaseorderitemUncheckedUpdateManyWithoutUomNestedInput
     purchasequotationitem?: purchasequotationitemUncheckedUpdateManyWithoutUomNestedInput
+    deliverychallanitem?: deliverychallanitemUncheckedUpdateManyWithoutUomNestedInput
   }
 
   export type companyCreateWithoutSalesreturnInput = {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -153165,6 +153908,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -153519,6 +154263,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -153611,6 +154356,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -154495,10 +155241,44 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type deliverychallanitemCreateWithoutServiceInput = {
+    quantity: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    description?: string | null
+    deliverychallan: deliverychallanCreateNestedOneWithoutDeliverychallanitemInput
+    product?: productCreateNestedOneWithoutDeliverychallanitemInput
+    warehouse?: warehouseCreateNestedOneWithoutDeliverychallanitemInput
+    uom?: uomCreateNestedOneWithoutDeliverychallanitemInput
+  }
+
+  export type deliverychallanitemUncheckedCreateWithoutServiceInput = {
+    id?: number
+    challanId: number
+    productId?: number | null
+    warehouseId?: number | null
+    uomId?: number | null
+    quantity: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    description?: string | null
+  }
+
+  export type deliverychallanitemCreateOrConnectWithoutServiceInput = {
+    where: deliverychallanitemWhereUniqueInput
+    create: XOR<deliverychallanitemCreateWithoutServiceInput, deliverychallanitemUncheckedCreateWithoutServiceInput>
+  }
+
+  export type deliverychallanitemCreateManyServiceInputEnvelope = {
+    data: deliverychallanitemCreateManyServiceInput | deliverychallanitemCreateManyServiceInput[]
+    skipDuplicates?: boolean
+  }
+
   export type companyCreateWithoutServiceInput = {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -154591,6 +155371,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -154705,6 +155486,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemCreateNestedManyWithoutUomInput
     purchaseorderitem?: purchaseorderitemCreateNestedManyWithoutUomInput
     purchasequotationitem?: purchasequotationitemCreateNestedManyWithoutUomInput
+    deliverychallanitem?: deliverychallanitemCreateNestedManyWithoutUomInput
   }
 
   export type uomUncheckedCreateWithoutServiceInput = {
@@ -154730,6 +155512,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUncheckedCreateNestedManyWithoutUomInput
     purchaseorderitem?: purchaseorderitemUncheckedCreateNestedManyWithoutUomInput
     purchasequotationitem?: purchasequotationitemUncheckedCreateNestedManyWithoutUomInput
+    deliverychallanitem?: deliverychallanitemUncheckedCreateNestedManyWithoutUomInput
   }
 
   export type uomCreateOrConnectWithoutServiceInput = {
@@ -154785,6 +155568,22 @@ export namespace Prisma {
     data: XOR<salesquotationitemUpdateManyMutationInput, salesquotationitemUncheckedUpdateManyWithoutServiceInput>
   }
 
+  export type deliverychallanitemUpsertWithWhereUniqueWithoutServiceInput = {
+    where: deliverychallanitemWhereUniqueInput
+    update: XOR<deliverychallanitemUpdateWithoutServiceInput, deliverychallanitemUncheckedUpdateWithoutServiceInput>
+    create: XOR<deliverychallanitemCreateWithoutServiceInput, deliverychallanitemUncheckedCreateWithoutServiceInput>
+  }
+
+  export type deliverychallanitemUpdateWithWhereUniqueWithoutServiceInput = {
+    where: deliverychallanitemWhereUniqueInput
+    data: XOR<deliverychallanitemUpdateWithoutServiceInput, deliverychallanitemUncheckedUpdateWithoutServiceInput>
+  }
+
+  export type deliverychallanitemUpdateManyWithWhereWithoutServiceInput = {
+    where: deliverychallanitemScalarWhereInput
+    data: XOR<deliverychallanitemUpdateManyMutationInput, deliverychallanitemUncheckedUpdateManyWithoutServiceInput>
+  }
+
   export type companyUpsertWithoutServiceInput = {
     update: XOR<companyUpdateWithoutServiceInput, companyUncheckedUpdateWithoutServiceInput>
     create: XOR<companyCreateWithoutServiceInput, companyUncheckedCreateWithoutServiceInput>
@@ -154800,6 +155599,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -154892,6 +155692,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -155012,6 +155813,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUpdateManyWithoutUomNestedInput
     purchaseorderitem?: purchaseorderitemUpdateManyWithoutUomNestedInput
     purchasequotationitem?: purchasequotationitemUpdateManyWithoutUomNestedInput
+    deliverychallanitem?: deliverychallanitemUpdateManyWithoutUomNestedInput
   }
 
   export type uomUncheckedUpdateWithoutServiceInput = {
@@ -155037,6 +155839,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUncheckedUpdateManyWithoutUomNestedInput
     purchaseorderitem?: purchaseorderitemUncheckedUpdateManyWithoutUomNestedInput
     purchasequotationitem?: purchasequotationitemUncheckedUpdateManyWithoutUomNestedInput
+    deliverychallanitem?: deliverychallanitemUncheckedUpdateManyWithoutUomNestedInput
   }
 
   export type productCreateWithoutStockInput = {
@@ -155383,6 +156186,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -155475,6 +156279,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -155685,6 +156490,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -155777,6 +156583,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -156366,6 +157173,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -156458,6 +157266,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -157079,6 +157888,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -157171,6 +157981,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -157824,6 +158635,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -157916,6 +158728,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -158030,6 +158843,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemCreateNestedManyWithoutUomInput
     purchaseorderitem?: purchaseorderitemCreateNestedManyWithoutUomInput
     purchasequotationitem?: purchasequotationitemCreateNestedManyWithoutUomInput
+    deliverychallanitem?: deliverychallanitemCreateNestedManyWithoutUomInput
   }
 
   export type uomUncheckedCreateWithoutChildUnitsInput = {
@@ -158055,6 +158869,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUncheckedCreateNestedManyWithoutUomInput
     purchaseorderitem?: purchaseorderitemUncheckedCreateNestedManyWithoutUomInput
     purchasequotationitem?: purchasequotationitemUncheckedCreateNestedManyWithoutUomInput
+    deliverychallanitem?: deliverychallanitemUncheckedCreateNestedManyWithoutUomInput
   }
 
   export type uomCreateOrConnectWithoutChildUnitsInput = {
@@ -158084,6 +158899,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemCreateNestedManyWithoutUomInput
     purchaseorderitem?: purchaseorderitemCreateNestedManyWithoutUomInput
     purchasequotationitem?: purchasequotationitemCreateNestedManyWithoutUomInput
+    deliverychallanitem?: deliverychallanitemCreateNestedManyWithoutUomInput
   }
 
   export type uomUncheckedCreateWithoutBaseUnitInput = {
@@ -158109,6 +158925,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUncheckedCreateNestedManyWithoutUomInput
     purchaseorderitem?: purchaseorderitemUncheckedCreateNestedManyWithoutUomInput
     purchasequotationitem?: purchasequotationitemUncheckedCreateNestedManyWithoutUomInput
+    deliverychallanitem?: deliverychallanitemUncheckedCreateNestedManyWithoutUomInput
   }
 
   export type uomCreateOrConnectWithoutBaseUnitInput = {
@@ -158431,6 +159248,7 @@ export namespace Prisma {
     invoiceitem?: invoiceitemCreateNestedManyWithoutServiceInput
     salesorderitem?: salesorderitemCreateNestedManyWithoutServiceInput
     salesquotationitem?: salesquotationitemCreateNestedManyWithoutServiceInput
+    deliverychallanitem?: deliverychallanitemCreateNestedManyWithoutServiceInput
     company: companyCreateNestedOneWithoutServiceInput
   }
 
@@ -158449,6 +159267,7 @@ export namespace Prisma {
     invoiceitem?: invoiceitemUncheckedCreateNestedManyWithoutServiceInput
     salesorderitem?: salesorderitemUncheckedCreateNestedManyWithoutServiceInput
     salesquotationitem?: salesquotationitemUncheckedCreateNestedManyWithoutServiceInput
+    deliverychallanitem?: deliverychallanitemUncheckedCreateNestedManyWithoutServiceInput
   }
 
   export type serviceCreateOrConnectWithoutUomInput = {
@@ -158762,6 +159581,39 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type deliverychallanitemCreateWithoutUomInput = {
+    quantity: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    description?: string | null
+    deliverychallan: deliverychallanCreateNestedOneWithoutDeliverychallanitemInput
+    product?: productCreateNestedOneWithoutDeliverychallanitemInput
+    service?: serviceCreateNestedOneWithoutDeliverychallanitemInput
+    warehouse?: warehouseCreateNestedOneWithoutDeliverychallanitemInput
+  }
+
+  export type deliverychallanitemUncheckedCreateWithoutUomInput = {
+    id?: number
+    challanId: number
+    productId?: number | null
+    serviceId?: number | null
+    warehouseId?: number | null
+    quantity: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    description?: string | null
+  }
+
+  export type deliverychallanitemCreateOrConnectWithoutUomInput = {
+    where: deliverychallanitemWhereUniqueInput
+    create: XOR<deliverychallanitemCreateWithoutUomInput, deliverychallanitemUncheckedCreateWithoutUomInput>
+  }
+
+  export type deliverychallanitemCreateManyUomInputEnvelope = {
+    data: deliverychallanitemCreateManyUomInput | deliverychallanitemCreateManyUomInput[]
+    skipDuplicates?: boolean
+  }
+
   export type companyUpsertWithoutUomInput = {
     update: XOR<companyUpdateWithoutUomInput, companyUncheckedUpdateWithoutUomInput>
     create: XOR<companyCreateWithoutUomInput, companyUncheckedCreateWithoutUomInput>
@@ -158777,6 +159629,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -158869,6 +159722,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -158989,6 +159843,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUpdateManyWithoutUomNestedInput
     purchaseorderitem?: purchaseorderitemUpdateManyWithoutUomNestedInput
     purchasequotationitem?: purchasequotationitemUpdateManyWithoutUomNestedInput
+    deliverychallanitem?: deliverychallanitemUpdateManyWithoutUomNestedInput
   }
 
   export type uomUncheckedUpdateWithoutChildUnitsInput = {
@@ -159014,6 +159869,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUncheckedUpdateManyWithoutUomNestedInput
     purchaseorderitem?: purchaseorderitemUncheckedUpdateManyWithoutUomNestedInput
     purchasequotationitem?: purchasequotationitemUncheckedUpdateManyWithoutUomNestedInput
+    deliverychallanitem?: deliverychallanitemUncheckedUpdateManyWithoutUomNestedInput
   }
 
   export type uomUpsertWithWhereUniqueWithoutBaseUnitInput = {
@@ -159208,6 +160064,22 @@ export namespace Prisma {
     data: XOR<purchasequotationitemUpdateManyMutationInput, purchasequotationitemUncheckedUpdateManyWithoutUomInput>
   }
 
+  export type deliverychallanitemUpsertWithWhereUniqueWithoutUomInput = {
+    where: deliverychallanitemWhereUniqueInput
+    update: XOR<deliverychallanitemUpdateWithoutUomInput, deliverychallanitemUncheckedUpdateWithoutUomInput>
+    create: XOR<deliverychallanitemCreateWithoutUomInput, deliverychallanitemUncheckedCreateWithoutUomInput>
+  }
+
+  export type deliverychallanitemUpdateWithWhereUniqueWithoutUomInput = {
+    where: deliverychallanitemWhereUniqueInput
+    data: XOR<deliverychallanitemUpdateWithoutUomInput, deliverychallanitemUncheckedUpdateWithoutUomInput>
+  }
+
+  export type deliverychallanitemUpdateManyWithWhereWithoutUomInput = {
+    where: deliverychallanitemScalarWhereInput
+    data: XOR<deliverychallanitemUpdateManyMutationInput, deliverychallanitemUncheckedUpdateManyWithoutUomInput>
+  }
+
   export type passwordrequestCreateWithoutUserInput = {
     status?: string
     createdAt?: Date | string
@@ -159237,6 +160109,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -159329,6 +160202,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -159522,6 +160396,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -159614,6 +160489,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -160285,6 +161161,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -160377,6 +161254,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -160678,6 +161556,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -160770,6 +161649,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -160863,13 +161743,17 @@ export namespace Prisma {
     updatedAt?: Date | string
     description?: string | null
     deliverychallan: deliverychallanCreateNestedOneWithoutDeliverychallanitemInput
-    product: productCreateNestedOneWithoutDeliverychallanitemInput
+    product?: productCreateNestedOneWithoutDeliverychallanitemInput
+    service?: serviceCreateNestedOneWithoutDeliverychallanitemInput
+    uom?: uomCreateNestedOneWithoutDeliverychallanitemInput
   }
 
   export type deliverychallanitemUncheckedCreateWithoutWarehouseInput = {
     id?: number
     challanId: number
-    productId: number
+    productId?: number | null
+    serviceId?: number | null
+    uomId?: number | null
     quantity: number
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -161533,6 +162417,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -161625,6 +162510,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -162057,6 +162943,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -162149,6 +163036,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -162256,6 +163144,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -162348,6 +163237,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -162828,6 +163718,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -162920,6 +163811,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -163811,6 +164703,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -163903,6 +164796,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -164010,6 +164904,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -164102,6 +164997,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -166366,6 +167262,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -166458,6 +167355,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -166565,6 +167463,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -166657,6 +167556,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -166784,6 +167684,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -166876,6 +167777,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -167025,6 +167927,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -167117,6 +168020,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -167208,6 +168112,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -167300,6 +168205,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -167627,6 +168533,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -167719,6 +168626,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -167842,6 +168750,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -167934,6 +168843,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -168041,6 +168951,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -168133,6 +169044,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -168224,6 +169136,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -168316,6 +169229,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -168741,6 +169655,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -168833,6 +169748,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -172226,6 +173142,7 @@ export namespace Prisma {
     invoiceitem?: invoiceitemUpdateManyWithoutServiceNestedInput
     salesorderitem?: salesorderitemUpdateManyWithoutServiceNestedInput
     salesquotationitem?: salesquotationitemUpdateManyWithoutServiceNestedInput
+    deliverychallanitem?: deliverychallanitemUpdateManyWithoutServiceNestedInput
     uom?: uomUpdateOneRequiredWithoutServiceNestedInput
   }
 
@@ -172244,6 +173161,7 @@ export namespace Prisma {
     invoiceitem?: invoiceitemUncheckedUpdateManyWithoutServiceNestedInput
     salesorderitem?: salesorderitemUncheckedUpdateManyWithoutServiceNestedInput
     salesquotationitem?: salesquotationitemUncheckedUpdateManyWithoutServiceNestedInput
+    deliverychallanitem?: deliverychallanitemUncheckedUpdateManyWithoutServiceNestedInput
   }
 
   export type serviceUncheckedUpdateManyWithoutCompanyInput = {
@@ -172384,6 +173302,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUpdateManyWithoutUomNestedInput
     purchaseorderitem?: purchaseorderitemUpdateManyWithoutUomNestedInput
     purchasequotationitem?: purchasequotationitemUpdateManyWithoutUomNestedInput
+    deliverychallanitem?: deliverychallanitemUpdateManyWithoutUomNestedInput
   }
 
   export type uomUncheckedUpdateWithoutCompanyInput = {
@@ -172409,6 +173328,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUncheckedUpdateManyWithoutUomNestedInput
     purchaseorderitem?: purchaseorderitemUncheckedUpdateManyWithoutUomNestedInput
     purchasequotationitem?: purchasequotationitemUncheckedUpdateManyWithoutUomNestedInput
+    deliverychallanitem?: deliverychallanitemUncheckedUpdateManyWithoutUomNestedInput
   }
 
   export type uomUncheckedUpdateManyWithoutCompanyInput = {
@@ -173891,8 +174811,10 @@ export namespace Prisma {
 
   export type deliverychallanitemCreateManyDeliverychallanInput = {
     id?: number
-    productId: number
-    warehouseId: number
+    productId?: number | null
+    serviceId?: number | null
+    warehouseId?: number | null
+    uomId?: number | null
     quantity: number
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -173947,14 +174869,18 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
-    product?: productUpdateOneRequiredWithoutDeliverychallanitemNestedInput
-    warehouse?: warehouseUpdateOneRequiredWithoutDeliverychallanitemNestedInput
+    product?: productUpdateOneWithoutDeliverychallanitemNestedInput
+    service?: serviceUpdateOneWithoutDeliverychallanitemNestedInput
+    warehouse?: warehouseUpdateOneWithoutDeliverychallanitemNestedInput
+    uom?: uomUpdateOneWithoutDeliverychallanitemNestedInput
   }
 
   export type deliverychallanitemUncheckedUpdateWithoutDeliverychallanInput = {
     id?: IntFieldUpdateOperationsInput | number
-    productId?: IntFieldUpdateOperationsInput | number
-    warehouseId?: IntFieldUpdateOperationsInput | number
+    productId?: NullableIntFieldUpdateOperationsInput | number | null
+    serviceId?: NullableIntFieldUpdateOperationsInput | number | null
+    warehouseId?: NullableIntFieldUpdateOperationsInput | number | null
+    uomId?: NullableIntFieldUpdateOperationsInput | number | null
     quantity?: FloatFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -173963,8 +174889,10 @@ export namespace Prisma {
 
   export type deliverychallanitemUncheckedUpdateManyWithoutDeliverychallanInput = {
     id?: IntFieldUpdateOperationsInput | number
-    productId?: IntFieldUpdateOperationsInput | number
-    warehouseId?: IntFieldUpdateOperationsInput | number
+    productId?: NullableIntFieldUpdateOperationsInput | number | null
+    serviceId?: NullableIntFieldUpdateOperationsInput | number | null
+    warehouseId?: NullableIntFieldUpdateOperationsInput | number | null
+    uomId?: NullableIntFieldUpdateOperationsInput | number | null
     quantity?: FloatFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -176097,6 +177025,7 @@ export namespace Prisma {
     name: string
     email: string
     logo?: string | null
+    status?: string
     startDate?: Date | string | null
     endDate?: Date | string | null
     invoiceTemplate?: string
@@ -176162,6 +177091,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -176254,6 +177184,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -176346,6 +177277,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     logo?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     endDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     invoiceTemplate?: StringFieldUpdateOperationsInput | string
@@ -176581,7 +177513,9 @@ export namespace Prisma {
   export type deliverychallanitemCreateManyProductInput = {
     id?: number
     challanId: number
-    warehouseId: number
+    serviceId?: number | null
+    warehouseId?: number | null
+    uomId?: number | null
     quantity: number
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -176838,13 +177772,17 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     deliverychallan?: deliverychallanUpdateOneRequiredWithoutDeliverychallanitemNestedInput
-    warehouse?: warehouseUpdateOneRequiredWithoutDeliverychallanitemNestedInput
+    service?: serviceUpdateOneWithoutDeliverychallanitemNestedInput
+    warehouse?: warehouseUpdateOneWithoutDeliverychallanitemNestedInput
+    uom?: uomUpdateOneWithoutDeliverychallanitemNestedInput
   }
 
   export type deliverychallanitemUncheckedUpdateWithoutProductInput = {
     id?: IntFieldUpdateOperationsInput | number
     challanId?: IntFieldUpdateOperationsInput | number
-    warehouseId?: IntFieldUpdateOperationsInput | number
+    serviceId?: NullableIntFieldUpdateOperationsInput | number | null
+    warehouseId?: NullableIntFieldUpdateOperationsInput | number | null
+    uomId?: NullableIntFieldUpdateOperationsInput | number | null
     quantity?: FloatFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -176854,7 +177792,9 @@ export namespace Prisma {
   export type deliverychallanitemUncheckedUpdateManyWithoutProductInput = {
     id?: IntFieldUpdateOperationsInput | number
     challanId?: IntFieldUpdateOperationsInput | number
-    warehouseId?: IntFieldUpdateOperationsInput | number
+    serviceId?: NullableIntFieldUpdateOperationsInput | number | null
+    warehouseId?: NullableIntFieldUpdateOperationsInput | number | null
+    uomId?: NullableIntFieldUpdateOperationsInput | number | null
     quantity?: FloatFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -179140,6 +180080,18 @@ export namespace Prisma {
     uomId?: number | null
   }
 
+  export type deliverychallanitemCreateManyServiceInput = {
+    id?: number
+    challanId: number
+    productId?: number | null
+    warehouseId?: number | null
+    uomId?: number | null
+    quantity: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    description?: string | null
+  }
+
   export type invoiceitemUpdateWithoutServiceInput = {
     description?: NullableStringFieldUpdateOperationsInput | string | null
     quantity?: FloatFieldUpdateOperationsInput | number
@@ -179297,6 +180249,41 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     warehouseId?: NullableIntFieldUpdateOperationsInput | number | null
     uomId?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type deliverychallanitemUpdateWithoutServiceInput = {
+    quantity?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    deliverychallan?: deliverychallanUpdateOneRequiredWithoutDeliverychallanitemNestedInput
+    product?: productUpdateOneWithoutDeliverychallanitemNestedInput
+    warehouse?: warehouseUpdateOneWithoutDeliverychallanitemNestedInput
+    uom?: uomUpdateOneWithoutDeliverychallanitemNestedInput
+  }
+
+  export type deliverychallanitemUncheckedUpdateWithoutServiceInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    challanId?: IntFieldUpdateOperationsInput | number
+    productId?: NullableIntFieldUpdateOperationsInput | number | null
+    warehouseId?: NullableIntFieldUpdateOperationsInput | number | null
+    uomId?: NullableIntFieldUpdateOperationsInput | number | null
+    quantity?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type deliverychallanitemUncheckedUpdateManyWithoutServiceInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    challanId?: IntFieldUpdateOperationsInput | number
+    productId?: NullableIntFieldUpdateOperationsInput | number | null
+    warehouseId?: NullableIntFieldUpdateOperationsInput | number | null
+    uomId?: NullableIntFieldUpdateOperationsInput | number | null
+    quantity?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type stocktransferitemCreateManyStocktransferInput = {
@@ -179573,6 +180560,18 @@ export namespace Prisma {
     warehouseId?: number | null
   }
 
+  export type deliverychallanitemCreateManyUomInput = {
+    id?: number
+    challanId: number
+    productId?: number | null
+    serviceId?: number | null
+    warehouseId?: number | null
+    quantity: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    description?: string | null
+  }
+
   export type uomUpdateWithoutBaseUnitInput = {
     category?: StringFieldUpdateOperationsInput | string
     unitName?: StringFieldUpdateOperationsInput | string
@@ -179595,6 +180594,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUpdateManyWithoutUomNestedInput
     purchaseorderitem?: purchaseorderitemUpdateManyWithoutUomNestedInput
     purchasequotationitem?: purchasequotationitemUpdateManyWithoutUomNestedInput
+    deliverychallanitem?: deliverychallanitemUpdateManyWithoutUomNestedInput
   }
 
   export type uomUncheckedUpdateWithoutBaseUnitInput = {
@@ -179620,6 +180620,7 @@ export namespace Prisma {
     salesquotationitem?: salesquotationitemUncheckedUpdateManyWithoutUomNestedInput
     purchaseorderitem?: purchaseorderitemUncheckedUpdateManyWithoutUomNestedInput
     purchasequotationitem?: purchasequotationitemUncheckedUpdateManyWithoutUomNestedInput
+    deliverychallanitem?: deliverychallanitemUncheckedUpdateManyWithoutUomNestedInput
   }
 
   export type uomUncheckedUpdateManyWithoutBaseUnitInput = {
@@ -179996,6 +180997,7 @@ export namespace Prisma {
     invoiceitem?: invoiceitemUpdateManyWithoutServiceNestedInput
     salesorderitem?: salesorderitemUpdateManyWithoutServiceNestedInput
     salesquotationitem?: salesquotationitemUpdateManyWithoutServiceNestedInput
+    deliverychallanitem?: deliverychallanitemUpdateManyWithoutServiceNestedInput
     company?: companyUpdateOneRequiredWithoutServiceNestedInput
   }
 
@@ -180014,6 +181016,7 @@ export namespace Prisma {
     invoiceitem?: invoiceitemUncheckedUpdateManyWithoutServiceNestedInput
     salesorderitem?: salesorderitemUncheckedUpdateManyWithoutServiceNestedInput
     salesquotationitem?: salesquotationitemUncheckedUpdateManyWithoutServiceNestedInput
+    deliverychallanitem?: deliverychallanitemUncheckedUpdateManyWithoutServiceNestedInput
   }
 
   export type serviceUncheckedUpdateManyWithoutUomInput = {
@@ -180378,6 +181381,41 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     warehouseId?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type deliverychallanitemUpdateWithoutUomInput = {
+    quantity?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    deliverychallan?: deliverychallanUpdateOneRequiredWithoutDeliverychallanitemNestedInput
+    product?: productUpdateOneWithoutDeliverychallanitemNestedInput
+    service?: serviceUpdateOneWithoutDeliverychallanitemNestedInput
+    warehouse?: warehouseUpdateOneWithoutDeliverychallanitemNestedInput
+  }
+
+  export type deliverychallanitemUncheckedUpdateWithoutUomInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    challanId?: IntFieldUpdateOperationsInput | number
+    productId?: NullableIntFieldUpdateOperationsInput | number | null
+    serviceId?: NullableIntFieldUpdateOperationsInput | number | null
+    warehouseId?: NullableIntFieldUpdateOperationsInput | number | null
+    quantity?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type deliverychallanitemUncheckedUpdateManyWithoutUomInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    challanId?: IntFieldUpdateOperationsInput | number
+    productId?: NullableIntFieldUpdateOperationsInput | number | null
+    serviceId?: NullableIntFieldUpdateOperationsInput | number | null
+    warehouseId?: NullableIntFieldUpdateOperationsInput | number | null
+    quantity?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type passwordrequestCreateManyUserInput = {
@@ -181302,7 +182340,9 @@ export namespace Prisma {
   export type deliverychallanitemCreateManyWarehouseInput = {
     id?: number
     challanId: number
-    productId: number
+    productId?: number | null
+    serviceId?: number | null
+    uomId?: number | null
     quantity: number
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -181571,13 +182611,17 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     deliverychallan?: deliverychallanUpdateOneRequiredWithoutDeliverychallanitemNestedInput
-    product?: productUpdateOneRequiredWithoutDeliverychallanitemNestedInput
+    product?: productUpdateOneWithoutDeliverychallanitemNestedInput
+    service?: serviceUpdateOneWithoutDeliverychallanitemNestedInput
+    uom?: uomUpdateOneWithoutDeliverychallanitemNestedInput
   }
 
   export type deliverychallanitemUncheckedUpdateWithoutWarehouseInput = {
     id?: IntFieldUpdateOperationsInput | number
     challanId?: IntFieldUpdateOperationsInput | number
-    productId?: IntFieldUpdateOperationsInput | number
+    productId?: NullableIntFieldUpdateOperationsInput | number | null
+    serviceId?: NullableIntFieldUpdateOperationsInput | number | null
+    uomId?: NullableIntFieldUpdateOperationsInput | number | null
     quantity?: FloatFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -181587,7 +182631,9 @@ export namespace Prisma {
   export type deliverychallanitemUncheckedUpdateManyWithoutWarehouseInput = {
     id?: IntFieldUpdateOperationsInput | number
     challanId?: IntFieldUpdateOperationsInput | number
-    productId?: IntFieldUpdateOperationsInput | number
+    productId?: NullableIntFieldUpdateOperationsInput | number | null
+    serviceId?: NullableIntFieldUpdateOperationsInput | number | null
+    uomId?: NullableIntFieldUpdateOperationsInput | number | null
     quantity?: FloatFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string

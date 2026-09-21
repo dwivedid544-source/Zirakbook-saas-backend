@@ -1,6 +1,7 @@
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 const numberingService = require('../services/numberingService');
+const { resolveWarehouseId } = require('../services/warehouseService');
 
 async function updateSalesOrderStatus(tx, salesOrderId) {
     if (!salesOrderId) return;
@@ -586,21 +587,32 @@ const updateOrder = async (req, res) => {
                     where: { challanId: dc.id }
                 });
 
-                // Re-create items matching physical items in the sales order
-                const physicalItems = orderItems.filter(i => i.productId);
-                await tx.deliverychallanitem.createMany({
-                    data: physicalItems.map(i => ({
+                // Re-create items matching the sales order (both products and services)
+                const challanItems = [];
+                for (const i of orderItems) {
+                    let validWhId = null;
+                    if (i.productId) {
+                        validWhId = await resolveWarehouseId(tx, companyId, i.warehouseId, 'sales');
+                    } else if (i.warehouseId) {
+                        validWhId = i.warehouseId;
+                    }
+                    challanItems.push({
                         challanId: dc.id,
-                        productId: i.productId,
-                        warehouseId: i.warehouseId || 1,
+                        productId: i.productId || null,
+                        serviceId: i.serviceId || null,
+                        warehouseId: validWhId,
+                        uomId: i.uomId || null,
                         quantity: i.quantity,
                         description: i.description || ''
-                    }))
+                    });
+                }
+                await tx.deliverychallanitem.createMany({
+                    data: challanItems
                 });
 
                 // Apply new stock and log transaction
-                for (const item of physicalItems) {
-                    const wId = item.warehouseId || 1;
+                for (const item of challanItems) {
+                    const wId = item.warehouseId;
                     if (item.productId && wId) {
                         if (action === 'ISSUE') {
                             await tx.stock.upsert({
@@ -808,23 +820,32 @@ const convertToDeliveryChallan = async (req, res) => {
                 throw new Error('Sales Order has already been converted');
             }
 
-            // Filter items to physical products only
-            const physicalItems = order.salesorderitem.filter(item => item.productId !== null);
-            if (physicalItems.length === 0) {
-                throw new Error('This Sales Order contains no physical products to deliver');
+            if (!order.salesorderitem || order.salesorderitem.length === 0) {
+                throw new Error('This Sales Order contains no items to deliver');
             }
 
             // Generate Delivery Challan number
             const numbering = await numberingService.getNextNumber(companyId, 'deliverychallan');
             const challanNumber = numbering.formattedNumber;
 
-            // Copy items
-            const challanItems = physicalItems.map(item => ({
-                productId: item.productId,
-                warehouseId: item.warehouseId || 1, // fallback to a default warehouse ID if not set
-                quantity: item.quantity,
-                description: item.description || ''
-            }));
+            // Copy items (both products and services)
+            const challanItems = [];
+            for (const item of order.salesorderitem) {
+                let validWhId = null;
+                if (item.productId) {
+                    validWhId = await resolveWarehouseId(tx, companyId, item.warehouseId, 'sales');
+                } else if (item.warehouseId) {
+                    validWhId = item.warehouseId;
+                }
+                challanItems.push({
+                    productId: item.productId || null,
+                    serviceId: item.serviceId || null,
+                    warehouseId: validWhId,
+                    uomId: item.uomId || null,
+                    quantity: item.quantity,
+                    description: item.description || ''
+                });
+            }
 
             // Create Delivery Challan
             const challan = await tx.deliverychallan.create({
